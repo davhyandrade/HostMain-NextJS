@@ -1,0 +1,101 @@
+.menu {
+    width: 13%;
+    height: 100vh;
+    background: #2e578b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    overflow: hidden;
+    position: fixed;
+
+    .position-menu {
+        height: 92vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        
+        #btn-logo {
+            color: white;
+            font-size: 2.2rem;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .btn-menu {
+            width: 100%;
+            color: #abbcd0;
+            font-size: 17px;
+            font-weight: 400;
+            margin-top: 40px;
+
+            div {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                > a {
+                    width: 75%;
+                    text-decoration: none;
+    
+                    ul {
+                        width: 100%;
+                        border-top: 2px dotted rgb(68, 128, 197);
+                        padding: 15px 15px 15px 0px;
+                        display: flex;
+                        align-items: center;
+                        user-select: none;
+                        
+                        img {
+                            margin-left: 3px;
+                            width: 25px;
+                            margin-right: 10px;
+                            opacity: 50%;
+                        }
+    
+                        p {
+                            color: white;
+                            text-decoration: none;
+                            opacity: 50%;
+                        }
+        
+                        &:hover p{
+                            transition: 1s;
+                            color: white;
+                            opacity: 100%;
+                        }
+        
+                        &:hover img {
+                            transition: 1s;
+                            opacity: 100%;
+                        }
+        
+                        &:active {
+                            transition: 0.1s;
+                            color: black;
+                        }
+                    }
+                }
+            }
+
+
+            div:nth-child(1) ul {
+                border-top: none;
+            }
+
+            .ativo {
+                background: #284b77;
+                color: white;
+
+                img {
+                    opacity: 100%;
+                }
+
+                p {
+                    opacity: 100%;
+                }
+            }
+        }
+    }
+}

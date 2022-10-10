@@ -1,0 +1,16 @@
+body {
+    background: #ebeff3;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    
+    .position-section {
+        width: 87%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

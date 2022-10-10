@@ -1,0 +1,28 @@
+.field-listar {
+    display: flex;
+
+    div {
+        flex-direction: column;
+        
+        table {
+            width: 100%;
+            margin-top: 30px;
+    
+            th {
+                color: white;
+                padding: 10px 40px;
+                background: #cdd8df;
+                border-radius: 5px;
+            }
+    
+            td {
+                color: gray;
+                text-align: center;
+                padding: 10px 40px;
+                background: #cdd8df3c;
+                border-radius: 5px;
+                font-size: 15px;
+            }
+        }
+    }
+}
