@@ -11,9 +11,12 @@ export default function Alterar() {
     const { setAlterarAlunos } = useContext(divContext);
     const { setAlterarDisciplinas } = useContext(divContext);
     const { setAlterarCursos } = useContext(divContext);
+    const { alterarAlunos } = useContext(divContext);
 
     const router = useRouter();
 
+    console.log('alterarAlunos: '+alterarAlunos);
+    
     async function handleFormAlunos(event: any) {
         event.preventDefault();
         await axios.post(`/api/alunos/alterar/${data.matricula_alterar}`).then((response) => setAlterarAlunos(response.data));

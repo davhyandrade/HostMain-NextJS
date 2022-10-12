@@ -17,6 +17,12 @@ export default function Cursos() {
 
     const router = useRouter();
     
+    if(alterarCursos[0] === '') {
+        alert('404 error: not found - Código inexistente');
+        router.push('/alterar');
+        window.location.reload();
+    }
+
     function handleButtonCancel() {
         setTimeout(() => {
             router.push('/alterar');

@@ -17,7 +17,7 @@ export default function Alunos() {
 
     const router = useRouter();
 
-    if(typeof alterarAlunos[0] === 'undefined') {
+    if(alterarAlunos[0] === '') {
         alert('404 error: not found - Matricula inexistente');
         router.push('/alterar');
         window.location.reload();
