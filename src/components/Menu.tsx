@@ -7,16 +7,24 @@ export default function Menu() {
     if (typeof window !== "undefined") {
         let url = window.location.href;   
         
+        let urlHostmain = false;
+
+        if(url === 'https://hostmain.vercel.app/cadastrar') {
+            let urlHostmain = 'https://hostmain.vercel.app';
+        }
+
+        let domain = urlHostmain || 'http://localhost:3000';
+        
         useEffect(() => {
-            if(url === 'http://localhost:3000/cadastrar') {
+            if(url === `${domain}/cadastrar`) {
                 setIsButtonMenuAtivo({cadastrar: true});
-            } else if(url === 'http://localhost:3000/listar') {
+            } else if(url === `${domain}/listar`) {
                 setIsButtonMenuAtivo({listar: true});
-            } else if(url === 'http://localhost:3000/alterar') {
+            } else if(url === `${domain}/alterar`) {
                 setIsButtonMenuAtivo({alterar: true});
-            } else if(url === 'http://localhost:3000/excluir') {
+            } else if(url === `${domain}/excluir`) {
                 setIsButtonMenuAtivo({excluir: true});
-            } else if(url === 'http://localhost:3000/pesquisar') {
+            } else if(url === `${domain}/pesquisar`) {
                 setIsButtonMenuAtivo({pesquisar: true});
             } else {
                 setIsButtonMenuAtivo({cadastrar: true});

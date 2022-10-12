@@ -14,7 +14,7 @@ export default function Listar() {
     }, [])
     
     interface IListarAlunos {
-        matricula: number,
+        Matricula: number,
         Nome: string,
         Endereco: string,
         Cidade: string,
@@ -54,8 +54,8 @@ export default function Listar() {
                             {typeof listarAlunos !== 'undefined' && 
                                 listarAlunos.map((value: IListarAlunos) => {
                                     return(
-                                        <tr key={value.matricula}>
-                                            <td>{value.matricula}</td>
+                                        <tr key={value.Matricula}>
+                                            <td>{value.Matricula}</td>
                                             <td>{value.Nome}</td>
                                             <td>{value.Endereco}</td>
                                             <td>{value.Cidade}</td>

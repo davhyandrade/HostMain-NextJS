@@ -14,28 +14,28 @@ export default function Alterar() {
 
     const router = useRouter();
 
-    function handleFormAlunos(event: any) {
+    async function handleFormAlunos(event: any) {
         event.preventDefault();
+        await axios.post(`/api/alunos/alterar/${data.matricula_alterar}`).then((response) => setAlterarAlunos(response.data));
         setTimeout(() => {
             router.push('/alterar/alunos')
         }, 500);
-        axios.post(`/api/alunos/alterar/${data.matricula_alterar}`).then((response) => setAlterarAlunos(response.data));
     };
     
-    function handleFormDisciplinas(event: any) {
+    async function handleFormDisciplinas(event: any) {
         event.preventDefault();
+        await axios.post(`/api/disciplinas/alterar/${data.id_disciplina_alterar}`).then((response) => setAlterarDisciplinas(response.data));
         setTimeout(() => {
             router.push('/alterar/disciplinas')
         }, 500);
-        axios.post(`/api/disciplinas/alterar/${data.id_disciplina_alterar}`).then((response) => setAlterarDisciplinas(response.data));
     };
     
-    function handleFormCursos(event: any) {
+    async function handleFormCursos(event: any) {
         event.preventDefault();
+        await axios.post(`/api/cursos/alterar/${data.codigo_curso_alterar}`).then((response) => setAlterarCursos(response.data));
         setTimeout(() => {
             router.push('/alterar/cursos')
         }, 500);
-        axios.post(`/api/cursos/alterar/${data.codigo_curso_alterar}`).then((response) => setAlterarCursos(response.data));
     };
     
     return(

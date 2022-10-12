@@ -9,7 +9,7 @@ export default function Alunos() {
     const { setData } = useContext(divContext);
     const { alterarAlunos } = useContext(divContext);
 
-    const matricula = alterarAlunos[0].matricula;
+    const matricula = alterarAlunos[0].Matricula;
     const nome = alterarAlunos[0].Nome;
     const endereco = alterarAlunos[0].Endereco;
     const cidade = alterarAlunos[0].Cidade;
@@ -53,7 +53,9 @@ export default function Alunos() {
         })
     }, [])
 
-    document.querySelector<any | null>('.position-section').style.width = '100%';
+    if (typeof document !== "undefined") {
+        document.querySelector<any | null>('.position-section').style.width = '100%';
+    }
 
     return(
         <div id="modal">
