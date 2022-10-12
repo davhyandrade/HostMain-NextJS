@@ -32,8 +32,13 @@
     @media screen and (max-width: 800px) {
         & {
             > div {
-                padding: 35px;
+                padding: 20px;
                 width: 98%;
+
+                h1 {
+                    width: 93%;
+                    margin: 0 auto;
+                }
             }
         }
     }

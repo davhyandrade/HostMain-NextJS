@@ -17,7 +17,11 @@ export default function Disciplinas() {
     function handleButtonCancel() {
         setTimeout(() => {
             router.push('/alterar');
-            document.querySelector<any | null>('.position-section').style.width = '87%';
+            if(window.innerWidth > 800) {
+                document.querySelector<any | null>('.position-section').style.width = '87%';
+            } else {
+                document.querySelector<any | null>('.position-section').style.width = '97%';
+            }
         }, 500);
     }
 
@@ -41,6 +45,7 @@ export default function Disciplinas() {
     if (typeof document !== "undefined") {
         document.querySelector<any | null>('.position-section').style.width = '100%';
     }
+
     return(
         <div id="modal">
             <div>

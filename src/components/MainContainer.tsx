@@ -46,7 +46,9 @@ export default function MainContainer({ children }: any) {
     if (typeof window !== "undefined") {
         let url = window.location.href;   
 
-        if(url === 'http://localhost:3000/alterar/cursos') {
+        let domain = 'https://hostmain.vercel.app';
+
+        if(url === `${domain}/alterar/cursos`) {
             if(typeof alterarCursos[0] === 'undefined') {
                 alert('404 error: not found - Matricula inexistente');
                 setTimeout(() => {
@@ -54,7 +56,7 @@ export default function MainContainer({ children }: any) {
                     window.location.reload();
                 });
             }
-        } else if(url === 'http://localhost:3000/alterar/alunos') {
+        } else if(url === `${domain}/alterar/alunos`) {
             if(typeof alterarAlunos[0] === 'undefined') {
                 alert('404 error: not found - Código inexistente');
                 setTimeout(() => {
@@ -62,7 +64,7 @@ export default function MainContainer({ children }: any) {
                     window.location.reload();
                 });
             }
-        } else if(url === 'http://localhost:3000/alterar/disciplinas') {
+        } else if(url === `${domain}/alterar/disciplinas`) {
             if(typeof alterarDisciplinas[0] === 'undefined') {
                 alert('404 error: not found - Código inexistente');
                 setTimeout(() => {

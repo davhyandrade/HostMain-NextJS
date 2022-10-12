@@ -12,45 +12,33 @@ export default function Alterar() {
     const { setAlterarDisciplinas } = useContext(divContext);
     const { setAlterarCursos } = useContext(divContext);
     const { alterarAlunos } = useContext(divContext);
-    const { alterarDisciplinas } = useContext(divContext);
-    const { alterarCursos } = useContext(divContext);
 
     const router = useRouter();
 
+    console.log('alterarAlunos: '+alterarAlunos);
+    
     async function handleFormAlunos(event: any) {
         event.preventDefault();
         await axios.post(`/api/alunos/alterar/${data.matricula_alterar}`).then((response) => setAlterarAlunos(response.data));
-        if(typeof alterarAlunos[0] !== 'undefined') {
-            setTimeout(() => {
-                router.push('/alterar/alunos')
-            }, 500);
-        } else {
-            alert('404 error: not found - Matricula inexistente');
-        }
+        setTimeout(() => {
+            router.push('/alterar/alunos')
+        }, 500);
     };
     
     async function handleFormDisciplinas(event: any) {
         event.preventDefault();
         await axios.post(`/api/disciplinas/alterar/${data.id_disciplina_alterar}`).then((response) => setAlterarDisciplinas(response.data));
-        if(typeof alterarDisciplinas[0] !== 'undefined') {
-            setTimeout(() => {
-                router.push('/alterar/disciplinas')
-            }, 500);
-        } else {
-            alert('404 error: not found - Código inexistente');
-        }
+        setTimeout(() => {
+            router.push('/alterar/disciplinas')
+        }, 500);
     };
     
     async function handleFormCursos(event: any) {
         event.preventDefault();
         await axios.post(`/api/cursos/alterar/${data.codigo_curso_alterar}`).then((response) => setAlterarCursos(response.data));
-        if(typeof alterarCursos[0] !== 'undefined') {
-            setTimeout(() => {
-                router.push('/alterar/cursos')
-            }, 500);
-        } else {
-            alert('404 error: not found - Código inexistente');
-        }
+        setTimeout(() => {
+            router.push('/alterar/cursos')
+        }, 500);
     };
     
     return(

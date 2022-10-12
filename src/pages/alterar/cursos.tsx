@@ -20,7 +20,11 @@ export default function Cursos() {
     function handleButtonCancel() {
         setTimeout(() => {
             router.push('/alterar');
-            document.querySelector<any | null>('.position-section').style.width = '87%';
+            if(window.innerWidth > 800) {
+                document.querySelector<any | null>('.position-section').style.width = '87%';
+            } else {
+                document.querySelector<any | null>('.position-section').style.width = '97%';
+            }
         }, 500);
     }
 

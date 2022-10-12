@@ -4,6 +4,7 @@ export default function Header() {
     function handleButtonMenuMobile() {
         if(isActiveButtonMenuMobile) {
             isActiveButtonMenuMobile = false;
+            document.querySelector<any | null>('.menu').style.display = 'flex';
             document.querySelector<any | null>('.menu').classList.remove("menu-mobile-desativo");
             document.querySelector<any | null>('.menu').classList.add("menu-mobile-ativo");
             document.querySelector<any | null>('.btn-menu-mobile').classList.remove("btn-menu-mobile-desativo");
@@ -14,6 +15,9 @@ export default function Header() {
             document.querySelector<any | null>('.menu').classList.add("menu-mobile-desativo");
             document.querySelector<any | null>('.btn-menu-mobile').classList.remove("btn-menu-mobile-ativo");
             document.querySelector<any | null>('.btn-menu-mobile').classList.add("btn-menu-mobile-desativo");
+            setTimeout(() => {
+                document.querySelector<any | null>('.menu').style.display = 'none';
+            }, 900)
         }
     }
     

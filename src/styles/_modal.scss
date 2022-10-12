@@ -8,6 +8,7 @@
     height: 100vh;
     position: fixed;
     overflow: hidden;
+    z-index: 99;
     
     > div {
         width: 50%;
@@ -15,6 +16,13 @@
         border-radius: 5px;
         padding: 50px;
         margin-bottom: 20px;
+
+        @media screen and (max-width: 800px) {
+            & {
+                width: 90%;
+                padding: 30px;
+            }
+        }
 
         h1 {
             font-weight: normal;
@@ -85,6 +93,12 @@
                         transition: 0.1s;
                         background: black;
                     }
+
+                    @media screen and (max-width: 800px) {
+                        & {
+                            width: 50%;
+                        }
+                    }            
                 }
 
                 .btn-submit:nth-child(1):hover {
