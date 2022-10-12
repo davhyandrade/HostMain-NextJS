@@ -14,7 +14,7 @@ export default function Disciplinas() {
 
     const router = useRouter();
     
-    if(alterarDisciplinas[0] === '') {
+    if(typeof alterarDisciplinas[0] === 'undefined') {
         alert('404 error: not found - Código inexistente');
         router.push('/alterar');
         window.location.reload();
