@@ -4,9 +4,9 @@ import mysql from 'mysql';
 export default function handler(request: NextApiRequest, response: NextApiResponse) {
 
     const db = mysql.createPool({
-        host: "127.0.0.1", 
-        user: "root", 
-        password: "", 
+        host: "bdescola.cv3u8hudbuno.us-east-1.rds.amazonaws.com", 
+        user: "admin", 
+        password: "Dandrade06!", 
         database: "bd_escola", 
     })
 

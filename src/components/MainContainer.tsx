@@ -6,9 +6,32 @@ import { useRouter } from "next/router";
 export const divContext = createContext<any | null>({});
 
 export default function MainContainer({ children }: any) {
-    const [alterarAlunos, setAlterarAlunos] = useState<any>({});
-    const [alterarDisciplinas, setAlterarDisciplinas] = useState<any>({});
-    const [alterarCursos, setAlterarCursos] = useState<any>({});
+    const [alterarAlunos, setAlterarAlunos] = useState<any>({
+        [0]: {
+            Matricula: '',
+            Nome: '',
+            Endereco: '',
+            Cidade: '',
+            CodCurso: '',
+        }
+    });
+    const [alterarDisciplinas, setAlterarDisciplinas] = useState<any>({
+        [0]: {
+            CodCurso: '',
+            CodDisciplina: '',
+            Nome_Disciplina: '',
+        }
+    });
+    const [alterarCursos, setAlterarCursos] = useState<any>({
+        [0]: {
+            CodCurso: '',
+            Nome: '',
+            CodDisc1: '',
+            CodDisc2: '',
+            CodDisc3: '',
+        }
+    });
+
 
     const [data, setData] = useState({});
     const handleChangeData = (data: any) => {

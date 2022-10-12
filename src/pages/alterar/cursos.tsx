@@ -47,8 +47,10 @@ export default function Cursos() {
         })
     }, [])
 
-    document.querySelector<any | null>('.position-section').style.width = '100%';
-
+    if (typeof document !== "undefined") {
+        document.querySelector<any | null>('.position-section').style.width = '100%';
+    }
+    
     return(
         <div id="modal">
             <div>
