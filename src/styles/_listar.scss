@@ -13,6 +13,13 @@
                 padding: 10px 40px;
                 background: #cdd8df;
                 border-radius: 5px;
+
+                @media screen and (max-width: 800px) {
+                    & {
+                        padding: 10px;
+                        font-size: 0.5em;
+                    }
+                }
             }
     
             td {
@@ -22,6 +29,13 @@
                 background: #cdd8df3c;
                 border-radius: 5px;
                 font-size: 15px;
+
+                @media screen and (max-width: 800px) {
+                    & {
+                        padding: 10px;
+                        font-size: 0.5em;
+                    }
+                }
             }
         }
     }

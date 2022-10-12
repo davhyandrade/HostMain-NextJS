@@ -7,6 +7,7 @@
 
 body {
   background: #ebeff3;
+  overflow-x: hidden;
 }
 
 section {
@@ -20,6 +21,14 @@ section .position-section {
   flex-direction: column;
   align-items: center;
 }
+@media screen and (max-width: 800px) {
+  section {
+    justify-content: center;
+  }
+  section .position-section {
+    width: 97%;
+  }
+}
 
 .menu {
   width: 13%;
@@ -31,6 +40,8 @@ section .position-section {
   cursor: pointer;
   overflow: hidden;
   position: fixed;
+  transition: 1s;
+  z-index: 99;
 }
 .menu .position-menu {
   height: 92vh;
@@ -52,6 +63,11 @@ section .position-section {
   font-weight: 400;
   margin-top: 40px;
 }
+@media screen and (max-width: 800px) {
+  .menu .position-menu .btn-menu {
+    font-size: 21px;
+  }
+}
 .menu .position-menu .btn-menu div {
   display: flex;
   align-items: center;
@@ -72,11 +88,21 @@ section .position-section {
       -ms-user-select: none;
           user-select: none;
 }
+@media screen and (max-width: 800px) {
+  .menu .position-menu .btn-menu div > a ul {
+    padding: 25px 25px 25px 0;
+  }
+}
 .menu .position-menu .btn-menu div > a ul img {
   margin-left: 3px;
   width: 25px;
   margin-right: 10px;
   opacity: 50%;
+}
+@media screen and (max-width: 800px) {
+  .menu .position-menu .btn-menu div > a ul img {
+    width: 35px;
+  }
 }
 .menu .position-menu .btn-menu div > a ul p {
   color: white;
@@ -109,6 +135,271 @@ section .position-section {
 .menu .position-menu .btn-menu .ativo p {
   opacity: 100%;
 }
+@media screen and (max-width: 800px) {
+  .menu {
+    opacity: 0;
+    width: 80%;
+  }
+  .menu #btn-logo {
+    width: 70%;
+  }
+  .menu .btn-menu {
+    font-size: 21px;
+  }
+}
+
+.menu-mobile-ativo {
+  opacity: 100%;
+  -webkit-animation: start-transition-menu 0.8s linear;
+          animation: start-transition-menu 0.8s linear;
+}
+@-webkit-keyframes start-transition-menu {
+  from {
+    transform: translateX(-70px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes start-transition-menu {
+  from {
+    transform: translateX(-70px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.menu-mobile-desativo {
+  opacity: 0;
+  -webkit-animation: end-transition-menu 0.8s linear;
+          animation: end-transition-menu 0.8s linear;
+}
+@-webkit-keyframes end-transition-menu {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-70px);
+  }
+}
+@keyframes end-transition-menu {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-70px);
+  }
+}
+
+.btn-menu-mobile {
+  display: none;
+  width: 35px;
+  cursor: pointer;
+  position: relative;
+}
+.btn-menu-mobile .linha1 {
+  width: 100%;
+  height: 4px;
+  background: #333;
+  margin-bottom: 5px;
+}
+.btn-menu-mobile .linha2 {
+  width: 100%;
+  height: 4px;
+  background: #333;
+  margin-bottom: 5px;
+}
+.btn-menu-mobile .linha3 {
+  width: 100%;
+  height: 4px;
+  background: #333;
+}
+@media screen and (max-width: 800px) {
+  .btn-menu-mobile {
+    display: block;
+  }
+}
+
+.btn-menu-mobile-ativo {
+  -webkit-animation: start-margin-btn-menu-mobile 0.7s linear;
+          animation: start-margin-btn-menu-mobile 0.7s linear;
+  margin-top: 10px;
+}
+@-webkit-keyframes start-margin-btn-menu-mobile {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 10px;
+  }
+}
+@keyframes start-margin-btn-menu-mobile {
+  from {
+    margin-top: 0;
+  }
+  to {
+    margin-top: 10px;
+  }
+}
+.btn-menu-mobile-ativo .linha1 {
+  -webkit-animation: start-btn-mobile-linha1 0.7s linear;
+          animation: start-btn-mobile-linha1 0.7s linear;
+  transform: rotate(-45deg);
+  position: absolute;
+}
+@-webkit-keyframes start-btn-mobile-linha1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg);
+  }
+}
+@keyframes start-btn-mobile-linha1 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(-45deg);
+  }
+}
+.btn-menu-mobile-ativo .linha2 {
+  -webkit-animation: start-btn-mobile-linha2 0.7s linear;
+          animation: start-btn-mobile-linha2 0.7s linear;
+  transform: rotate(45deg);
+  position: absolute;
+}
+@-webkit-keyframes start-btn-mobile-linha2 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+@keyframes start-btn-mobile-linha2 {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(45deg);
+  }
+}
+.btn-menu-mobile-ativo .linha3 {
+  -webkit-animation: start-btn-mobile-linha3 0.7s linear;
+          animation: start-btn-mobile-linha3 0.7s linear;
+  opacity: 0;
+}
+@-webkit-keyframes start-btn-mobile-linha3 {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+@keyframes start-btn-mobile-linha3 {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+
+.btn-menu-mobile-desativo {
+  -webkit-animation: end-margin-btn-menu-mobile 0.7s linear;
+          animation: end-margin-btn-menu-mobile 0.7s linear;
+  margin-top: 0;
+}
+@-webkit-keyframes end-margin-btn-menu-mobile {
+  from {
+    margin-top: 10px;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+@keyframes end-margin-btn-menu-mobile {
+  from {
+    margin-top: 10px;
+  }
+  to {
+    margin-top: 0;
+  }
+}
+.btn-menu-mobile-desativo .linha1 {
+  -webkit-animation: end-btn-mobile-linha1 0.7s linear;
+          animation: end-btn-mobile-linha1 0.7s linear;
+  transform: rotate(0);
+}
+@-webkit-keyframes end-btn-mobile-linha1 {
+  from {
+    transform: rotate(-45deg);
+    position: absolute;
+  }
+  to {
+    transform: rotate(0);
+    position: absolute;
+  }
+}
+@keyframes end-btn-mobile-linha1 {
+  from {
+    transform: rotate(-45deg);
+    position: absolute;
+  }
+  to {
+    transform: rotate(0);
+    position: absolute;
+  }
+}
+.btn-menu-mobile-desativo .linha2 {
+  -webkit-animation: end-btn-mobile-linha2 0.7s linear;
+          animation: end-btn-mobile-linha2 0.7s linear;
+  transform: rotate(0);
+}
+@-webkit-keyframes end-btn-mobile-linha2 {
+  from {
+    transform: rotate(45deg);
+    position: absolute;
+  }
+  to {
+    transform: rotate(0);
+    position: absolute;
+  }
+}
+@keyframes end-btn-mobile-linha2 {
+  from {
+    transform: rotate(45deg);
+    position: absolute;
+  }
+  to {
+    transform: rotate(0);
+    position: absolute;
+  }
+}
+.btn-menu-mobile-desativo .linha3 {
+  -webkit-animation: end-btn-mobile-linha3 0.7s linear;
+          animation: end-btn-mobile-linha3 0.7s linear;
+  opacity: 100%;
+}
+@-webkit-keyframes end-btn-mobile-linha3 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+@keyframes end-btn-mobile-linha3 {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 100%;
+  }
+}
 
 .fields {
   width: 100%;
@@ -138,6 +429,12 @@ section .position-section {
   margin-top: 10px;
   margin-bottom: 30px;
 }
+@media screen and (max-width: 800px) {
+  .fields > div {
+    padding: 35px;
+    width: 98%;
+  }
+}
 
 .field-cadastrar {
   display: flex;
@@ -160,6 +457,11 @@ section .position-section {
   background: rgba(205, 216, 223, 0.2352941176);
   width: 40%;
 }
+@media screen and (max-width: 800px) {
+  .field-cadastrar div .input-text {
+    width: 100%;
+  }
+}
 .field-cadastrar div .input-text::-moz-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
@@ -171,6 +473,11 @@ section .position-section {
 }
 .field-cadastrar div .input-number {
   width: 20%;
+}
+@media screen and (max-width: 800px) {
+  .field-cadastrar div .input-number {
+    width: 100%;
+  }
 }
 .field-cadastrar div .btn-submit {
   padding: 10px 30px;
@@ -191,6 +498,11 @@ section .position-section {
   transition: 0.1s;
   background: black;
 }
+@media screen and (max-width: 800px) {
+  .field-cadastrar div .btn-submit {
+    width: 100%;
+  }
+}
 
 .field-listar {
   display: flex;
@@ -208,6 +520,12 @@ section .position-section {
   background: #cdd8df;
   border-radius: 5px;
 }
+@media screen and (max-width: 800px) {
+  .field-listar div table th {
+    padding: 10px;
+    font-size: 0.5em;
+  }
+}
 .field-listar div table td {
   color: gray;
   text-align: center;
@@ -215,6 +533,12 @@ section .position-section {
   background: rgba(205, 216, 223, 0.2352941176);
   border-radius: 5px;
   font-size: 15px;
+}
+@media screen and (max-width: 800px) {
+  .field-listar div table td {
+    padding: 10px;
+    font-size: 0.5em;
+  }
 }
 
 .field-excluir {
@@ -247,8 +571,10 @@ section .position-section {
 .field-excluir div .input-text::placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-.field-excluir div .input-number {
-  width: 20%;
+@media screen and (max-width: 800px) {
+  .field-excluir div .input-text {
+    width: 100%;
+  }
 }
 .field-excluir div .btn-submit-excluir {
   padding: 10px 30px;
@@ -268,6 +594,11 @@ section .position-section {
 .field-excluir div .btn-submit-excluir:active {
   transition: 0.1s;
   background: black;
+}
+@media screen and (max-width: 800px) {
+  .field-excluir div .btn-submit-excluir {
+    width: 100%;
+  }
 }
 
 .field-consultar {
@@ -290,6 +621,11 @@ section .position-section {
   margin-top: 5px;
   background: rgba(205, 216, 223, 0.2352941176);
   width: 40%;
+}
+@media screen and (max-width: 800px) {
+  .field-consultar div form .input-text {
+    width: 100%;
+  }
 }
 .field-consultar div form .input-text::-moz-placeholder {
   color: rgba(51, 51, 51, 0.252);
@@ -321,6 +657,11 @@ section .position-section {
 .field-consultar div form .btn-submit-consultar:active {
   transition: 0.1s;
   background: black;
+}
+@media screen and (max-width: 800px) {
+  .field-consultar div form .btn-submit-consultar {
+    width: 100%;
+  }
 }
 .field-consultar div table {
   width: 100%;
@@ -463,8 +804,18 @@ section .position-section {
 .field-alterar div .input-text::placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
+@media screen and (max-width: 800px) {
+  .field-alterar div .input-text {
+    width: 100%;
+  }
+}
 .field-alterar div .input-number {
   width: 20%;
+}
+@media screen and (max-width: 800px) {
+  .field-alterar div .input-number {
+    width: 100%;
+  }
 }
 .field-alterar div .btn-submit-alterar {
   padding: 10px 30px;
@@ -485,6 +836,11 @@ section .position-section {
   transition: 0.1s;
   background: black;
 }
+@media screen and (max-width: 800px) {
+  .field-alterar div .btn-submit-alterar {
+    width: 100%;
+  }
+}
 
 .header-section {
   width: 100%;
@@ -498,31 +854,46 @@ section .position-section {
   display: flex;
   justify-content: space-between;
 }
-.header-section .position-header-section div:nth-child(1) {
+@media screen and (max-width: 800px) {
+  .header-section .position-header-section {
+    width: 90%;
+  }
+}
+.header-section .position-header-section > div:nth-child(1) {
   display: flex;
   align-items: center;
   cursor: default;
 }
-.header-section .position-header-section div:nth-child(1) img {
+.header-section .position-header-section > div:nth-child(1) img {
   width: 30px;
 }
-.header-section .position-header-section div:nth-child(1) p {
+.header-section .position-header-section > div:nth-child(1) p {
   margin-left: 7px;
   font-weight: bold;
   color: #333;
   letter-spacing: 5px;
   font-size: 1.2rem;
 }
-.header-section .position-header-section div:nth-child(2) {
+@media screen and (max-width: 800px) {
+  .header-section .position-header-section > div:nth-child(1) {
+    display: none;
+  }
+}
+.header-section .position-header-section > div:nth-child(2) {
   width: 20%;
 }
-.header-section .position-header-section div:nth-child(2) details {
+@media screen and (max-width: 800px) {
+  .header-section .position-header-section > div:nth-child(2) {
+    width: auto;
+  }
+}
+.header-section .position-header-section > div:nth-child(2) details {
   cursor: pointer;
 }
-.header-section .position-header-section div:nth-child(2) details[open] summary::before {
+.header-section .position-header-section > div:nth-child(2) details[open] summary::before {
   content: url("https://i.postimg.cc/7YnH7BrW/seta-aberta.png");
 }
-.header-section .position-header-section div:nth-child(2) details summary {
+.header-section .position-header-section > div:nth-child(2) details summary {
   font-family: Arial, Helvetica, sans-serif;
   color: #333;
   font-size: 1.2rem;
@@ -530,18 +901,18 @@ section .position-section {
   display: flex;
   align-items: center;
 }
-.header-section .position-header-section div:nth-child(2) details summary span {
+.header-section .position-header-section > div:nth-child(2) details summary span {
   color: #4480C5;
   margin-left: 5px;
   font-size: 1.5rem;
   margin-bottom: 2px;
   font-variant: all-petite-caps;
 }
-.header-section .position-header-section div:nth-child(2) details summary::before {
+.header-section .position-header-section > div:nth-child(2) details summary::before {
   content: url("https://i.postimg.cc/0NJhGQJy/seta-fechada.png");
   margin-right: 15px;
 }
-.header-section .position-header-section div:nth-child(2) details div {
+.header-section .position-header-section > div:nth-child(2) details div {
   background: white;
   position: absolute;
   width: 250px;
@@ -552,13 +923,13 @@ section .position-section {
   flex-direction: column;
   border: 1px solid rgba(128, 128, 128, 0.4);
 }
-.header-section .position-header-section div:nth-child(2) details div a {
+.header-section .position-header-section > div:nth-child(2) details div a {
   padding: 5px;
   color: #4480C5;
   letter-spacing: 1px;
   text-decoration: none;
 }
-.header-section .position-header-section div:nth-child(2) details div a:hover {
+.header-section .position-header-section > div:nth-child(2) details div a:hover {
   transition: 1s;
   color: #333;
   text-decoration: underline;

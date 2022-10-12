@@ -5,7 +5,7 @@
     margin-top: 20px;
     margin-bottom: 50px;
 
-    & > div {
+    > div {
         width: 95%;
         background: #ffffff;
         border-radius: 5px;
@@ -27,5 +27,14 @@
                 margin-bottom: 30px;
             }
         }    
+    }
+
+    @media screen and (max-width: 800px) {
+        & {
+            > div {
+                padding: 35px;
+                width: 98%;
+            }
+        }
     }
 }

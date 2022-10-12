@@ -1,5 +1,6 @@
 body {
     background: #ebeff3;
+    overflow-x: hidden;
 }
 
 section {
@@ -12,5 +13,15 @@ section {
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    @media screen and (max-width: 800px) {
+        & {
+            justify-content: center;
+    
+            .position-section {
+                width: 97%;
+            }
+        }
     }
 }

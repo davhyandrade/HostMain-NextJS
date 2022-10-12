@@ -16,12 +16,6 @@ export default function Cursos() {
     const CodDisc3 = alterarCursos[0].CodDisc3;
 
     const router = useRouter();
-    
-    if(typeof alterarCursos[0] === 'undefined') {
-        alert('404 error: not found - Código inexistente');
-        router.push('/alterar');
-        window.location.reload();
-    }
 
     function handleButtonCancel() {
         setTimeout(() => {
