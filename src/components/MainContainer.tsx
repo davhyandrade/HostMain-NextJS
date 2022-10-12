@@ -50,7 +50,7 @@ export default function MainContainer({ children }: any) {
 
         if(url === `${domain}/alterar/cursos`) {
             if(typeof alterarCursos[0] === 'undefined') {
-                alert('404 error: not found - Matricula inexistente');
+                alert('404 error: not found - Código inexistente');
                 setTimeout(() => {
                     router.push('/alterar')
                     window.location.reload();
@@ -58,7 +58,7 @@ export default function MainContainer({ children }: any) {
             }
         } else if(url === `${domain}/alterar/alunos`) {
             if(typeof alterarAlunos[0] === 'undefined') {
-                alert('404 error: not found - Código inexistente');
+                alert('404 error: not found - Matricula inexistente');
                 setTimeout(() => {
                     router.push('/alterar')
                     window.location.reload();
