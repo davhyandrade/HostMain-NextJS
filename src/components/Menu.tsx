@@ -7,13 +7,7 @@ export default function Menu() {
     if (typeof window !== "undefined") {
         let url = window.location.href;   
         
-        let urlHostmain = false;
-
-        if(url === 'https://hostmain.vercel.app/cadastrar') {
-            let urlHostmain = 'https://hostmain.vercel.app';
-        }
-
-        let domain = urlHostmain || 'http://localhost:3000';
+        let domain = 'https://hostmain.vercel.app' || 'http://localhost:3000';
         
         useEffect(() => {
             if(url === `${domain}/cadastrar`) {
