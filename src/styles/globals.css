@@ -626,7 +626,6 @@ section .position-section {
 @media screen and (max-width: 800px) {
   .field-excluir div .btn-submit-excluir {
     width: 100%;
-    margin-top: 30px;
   }
 }
 
@@ -693,7 +692,6 @@ section .position-section {
 @media screen and (max-width: 800px) {
   .field-consultar div form .btn-submit-consultar {
     width: 100%;
-    margin-top: 30px;
   }
 }
 .field-consultar div table {
@@ -902,7 +900,6 @@ section .position-section {
 @media screen and (max-width: 800px) {
   .field-alterar div .btn-submit-alterar {
     width: 100%;
-    margin-top: 30px;
   }
 }
 
