@@ -138,7 +138,7 @@
 
 .menu-mobile-ativo {
     opacity: 100%;
-    animation: start-transition-menu 0.8s linear;
+    animation: start-transition-menu 0.5s linear;
 
     @keyframes start-transition-menu {
         from {
@@ -156,7 +156,7 @@
 .menu-mobile-desativo {
     display: flex;
     opacity: 0;
-    animation: end-transition-menu 0.8s linear;
+    animation: end-transition-menu 0.5s linear;
 
     @keyframes end-transition-menu {
         from {
@@ -205,7 +205,7 @@
 }
 
 .btn-menu-mobile-ativo {
-    animation: start-margin-btn-menu-mobile 0.7s linear;
+    animation: start-margin-btn-menu-mobile 0.5s linear;
     margin-top: 10px;
 
     @keyframes start-margin-btn-menu-mobile {
@@ -219,7 +219,7 @@
     }
 
     .linha1 {
-        animation: start-btn-mobile-linha1 0.7s  linear;
+        animation: start-btn-mobile-linha1 0.5s  linear;
         transform: rotate(-45deg);
         position: absolute;
 
@@ -235,7 +235,7 @@
     }
 
     .linha2 {
-        animation: start-btn-mobile-linha2 0.7s linear;
+        animation: start-btn-mobile-linha2 0.5s linear;
         transform: rotate(45deg);
         position: absolute;
                 
@@ -251,7 +251,7 @@
     }
 
     .linha3 {
-        animation: start-btn-mobile-linha3 0.7s linear;
+        animation: start-btn-mobile-linha3 0.5s linear;
         opacity: 0;
                 
         @keyframes start-btn-mobile-linha3 {
@@ -267,7 +267,7 @@
 }
 
 .btn-menu-mobile-desativo {
-    animation: end-margin-btn-menu-mobile 0.7s linear;
+    animation: end-margin-btn-menu-mobile 0.5s linear;
     margin-top: 0;
 
     @keyframes end-margin-btn-menu-mobile {
@@ -281,7 +281,7 @@
     }
 
     .linha1 {
-        animation: end-btn-mobile-linha1 0.7s  linear;
+        animation: end-btn-mobile-linha1 0.5s  linear;
         transform: rotate(0);
 
         @keyframes end-btn-mobile-linha1 {
@@ -298,7 +298,7 @@
     }
 
     .linha2 {
-        animation: end-btn-mobile-linha2 0.7s linear;
+        animation: end-btn-mobile-linha2 0.5s linear;
         transform: rotate(0);
                 
         @keyframes end-btn-mobile-linha2 {
@@ -315,7 +315,7 @@
     }
 
     .linha3 {
-        animation: end-btn-mobile-linha3 0.7s linear;
+        animation: end-btn-mobile-linha3 0.5s linear;
         opacity: 100%;
                 
         @keyframes end-btn-mobile-linha3 {
