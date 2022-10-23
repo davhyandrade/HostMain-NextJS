@@ -5,9 +5,9 @@
 
 ## HostMain
 
-<img src="https://i.postimg.cc/prgzH5Yy/bank-small.png" alt="bank-small" width="100%">
-
 HostMain é um CRUD desenvolvido pelo Next JS, Node JS e banco de dados MySQL na nuvem pela Amazon AWS.
+
+![hostmainvsd](https://user-images.githubusercontent.com/109045257/197403214-093b934f-e32c-423c-a8af-4022ba7829e7.png)
 
 # Desenvolvimento
 
