@@ -1,34 +1,140 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# CRUD Desenvovido com NextJS
 
-First, run the development server:
+> Status: Concluded
 
-```bash
-npm run dev
-# or
-yarn dev
+## HostMain
+
+HostMain é um CRUD desenvolvido pelo Next JS, Node JS e banco de dados MySQL na nuvem pela Amazon AWS.
+
+![hostmainvsd](https://user-images.githubusercontent.com/109045257/197403214-093b934f-e32c-423c-a8af-4022ba7829e7.png)
+
+# Desenvolvimento
+
+Desenvolvido pelo `Next JS`, com o backend trabalhado con `Node JS` e `MySQL`, com as funções Cadastrar, Pesquisar, Listar, Alterar e Excluir.
+
+* `Cadastrar` 
+
+```js
+    switch (method.request) {
+        case 'POST':
+            const { CodCurso } = request.body;
+            const { Nome } = request.body;
+            const { CodDisc1 } = request.body;
+            const { CodDisc2 } = request.body;
+            const { CodDisc3 } = request.body;
+        
+            let sqlCadastrar = 'insert into curso values (?, ?, ?, ?, ?)';
+        
+            db.query(sqlCadastrar, [CodCurso, Nome, CodDisc1, CodDisc2, CodDisc3], (err, result) => {
+                console.log(err);
+            })
+            break
+    }
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+* `Listar` 
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```js
+    switch (method.request) {
+        case 'GET':
+            let sqlListar = 'select * from curso order by Nome';
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+            db.query(sqlListar, (err, result) => {
+                if(err) {
+                    console.log(err);
+                } else {
+                    response.send(result);
+                }
+            })
+            break
+    }
+```
 
-## Learn More
+#
 
-To learn more about Next.js, take a look at the following resources:
+* `Excluir` 
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```js
+    switch (method.request) {
+        case 'DELETE':
+            let sqlDelete = 'delete from curso where CodCurso = ?';
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+            db.query(sqlDelete, [id], (err, result) => {
+                if(err) {
+                    console.log(err);
+                } else {
+                    response.send(result);
+                } 
+            })
+            break
+    }
+```
 
-## Deploy on Vercel
+#
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+* `Pesquisar` 
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```js
+    switch (method.request) {
+        case 'POST':
+            let sqlPesquisar = "select * from curso where Nome like '%" + id + "%'";
+
+            db.query(sqlPesquisar, [id], (err, result) => {
+                if(err) {
+                    console.log(err);
+                } else {
+                    response.send(result);
+                }
+            })
+            break
+    }
+```
+
+#
+
+* `Alterar` 
+
+  * Selecionar alteração
+  
+```js
+    const { id } = request.query;
+
+    if(method.request === 'POST') {
+        let sqlSelecionar = "select * from curso where CodCurso = ?";
+
+        db.query(sqlSelecionar, [id], (err, result) => {
+            if(err) {
+                console.log(err);
+            } else {
+                response.send(result);
+            }       
+        })
+    }
+```
+
+* `Alterar` 
+
+   * Salvar alteração
+     
+```js
+    if(method.request === 'PUT') {
+        const { CodCurso } = request.body;
+        const { Nome } = request.body;
+        const { CodDisc1 } = request.body;
+        const { CodDisc2 } = request.body;
+        const { CodDisc3 } = request.body;
+    
+        let sql = 'update curso set Nome = ?, CodDisc1 = ?, CodDisc2 = ?, CodDisc3 = ? where CodCurso = ?';
+    
+        db.query(sql, [Nome, CodDisc1, CodDisc2, CodDisc3, CodCurso], (err, result) => {
+            if(err) {
+                console.log(err);
+            } else {
+                response.send(result);
+            }    
+        })
+    }
+```
