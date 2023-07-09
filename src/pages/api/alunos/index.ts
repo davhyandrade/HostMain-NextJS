@@ -2,13 +2,9 @@ import type { NextApiRequest, NextApiResponse } from 'next'
 import mysql from 'mysql';
 
 export default function handler(request: NextApiRequest, response: NextApiResponse) {
+    const DATABASE_URL: any = process.env.DATABASE_URL;
 
-    const db = mysql.createConnection({
-        host: "bdescola.cv3u8hudbuno.us-east-1.rds.amazonaws.com", 
-        user: "admin", 
-        password: "Dandrade06!", 
-        database: "bd_escola", 
-    })
+    const db = mysql.createConnection(DATABASE_URL)
 
     const { method } = request;
     

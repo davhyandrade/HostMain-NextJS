@@ -85,7 +85,6 @@ section .position-section {
   align-items: center;
   -webkit-user-select: none;
      -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 @media screen and (max-width: 800px) {
@@ -151,18 +150,7 @@ section .position-section {
 
 .menu-mobile-ativo {
   opacity: 100%;
-  -webkit-animation: start-transition-menu 0.5s linear;
-          animation: start-transition-menu 0.5s linear;
-}
-@-webkit-keyframes start-transition-menu {
-  from {
-    transform: translateX(-70px);
-    opacity: 0;
-  }
-  to {
-    transform: translateX(0);
-    opacity: 100%;
-  }
+  animation: start-transition-menu 0.5s linear;
 }
 @keyframes start-transition-menu {
   from {
@@ -178,18 +166,7 @@ section .position-section {
 .menu-mobile-desativo {
   display: flex;
   opacity: 0;
-  -webkit-animation: end-transition-menu 0.5s linear;
-          animation: end-transition-menu 0.5s linear;
-}
-@-webkit-keyframes end-transition-menu {
-  from {
-    transform: translateX(0);
-    opacity: 100%;
-  }
-  to {
-    transform: translateX(-70px);
-    opacity: 0;
-  }
+  animation: end-transition-menu 0.5s linear;
 }
 @keyframes end-transition-menu {
   from {
@@ -232,17 +209,8 @@ section .position-section {
 }
 
 .btn-menu-mobile-ativo {
-  -webkit-animation: start-margin-btn-menu-mobile 0.5s linear;
-          animation: start-margin-btn-menu-mobile 0.5s linear;
+  animation: start-margin-btn-menu-mobile 0.5s linear;
   margin-top: 10px;
-}
-@-webkit-keyframes start-margin-btn-menu-mobile {
-  from {
-    margin-top: 0;
-  }
-  to {
-    margin-top: 10px;
-  }
 }
 @keyframes start-margin-btn-menu-mobile {
   from {
@@ -253,18 +221,9 @@ section .position-section {
   }
 }
 .btn-menu-mobile-ativo .linha1 {
-  -webkit-animation: start-btn-mobile-linha1 0.5s linear;
-          animation: start-btn-mobile-linha1 0.5s linear;
+  animation: start-btn-mobile-linha1 0.5s linear;
   transform: rotate(-45deg);
   position: absolute;
-}
-@-webkit-keyframes start-btn-mobile-linha1 {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(-45deg);
-  }
 }
 @keyframes start-btn-mobile-linha1 {
   from {
@@ -275,18 +234,9 @@ section .position-section {
   }
 }
 .btn-menu-mobile-ativo .linha2 {
-  -webkit-animation: start-btn-mobile-linha2 0.5s linear;
-          animation: start-btn-mobile-linha2 0.5s linear;
+  animation: start-btn-mobile-linha2 0.5s linear;
   transform: rotate(45deg);
   position: absolute;
-}
-@-webkit-keyframes start-btn-mobile-linha2 {
-  from {
-    transform: rotate(0);
-  }
-  to {
-    transform: rotate(45deg);
-  }
 }
 @keyframes start-btn-mobile-linha2 {
   from {
@@ -297,17 +247,8 @@ section .position-section {
   }
 }
 .btn-menu-mobile-ativo .linha3 {
-  -webkit-animation: start-btn-mobile-linha3 0.5s linear;
-          animation: start-btn-mobile-linha3 0.5s linear;
+  animation: start-btn-mobile-linha3 0.5s linear;
   opacity: 0;
-}
-@-webkit-keyframes start-btn-mobile-linha3 {
-  from {
-    opacity: 100%;
-  }
-  to {
-    opacity: 0%;
-  }
 }
 @keyframes start-btn-mobile-linha3 {
   from {
@@ -319,17 +260,8 @@ section .position-section {
 }
 
 .btn-menu-mobile-desativo {
-  -webkit-animation: end-margin-btn-menu-mobile 0.5s linear;
-          animation: end-margin-btn-menu-mobile 0.5s linear;
+  animation: end-margin-btn-menu-mobile 0.5s linear;
   margin-top: 0;
-}
-@-webkit-keyframes end-margin-btn-menu-mobile {
-  from {
-    margin-top: 10px;
-  }
-  to {
-    margin-top: 0;
-  }
 }
 @keyframes end-margin-btn-menu-mobile {
   from {
@@ -340,19 +272,8 @@ section .position-section {
   }
 }
 .btn-menu-mobile-desativo .linha1 {
-  -webkit-animation: end-btn-mobile-linha1 0.5s linear;
-          animation: end-btn-mobile-linha1 0.5s linear;
+  animation: end-btn-mobile-linha1 0.5s linear;
   transform: rotate(0);
-}
-@-webkit-keyframes end-btn-mobile-linha1 {
-  from {
-    transform: rotate(-45deg);
-    position: absolute;
-  }
-  to {
-    transform: rotate(0);
-    position: absolute;
-  }
 }
 @keyframes end-btn-mobile-linha1 {
   from {
@@ -365,19 +286,8 @@ section .position-section {
   }
 }
 .btn-menu-mobile-desativo .linha2 {
-  -webkit-animation: end-btn-mobile-linha2 0.5s linear;
-          animation: end-btn-mobile-linha2 0.5s linear;
+  animation: end-btn-mobile-linha2 0.5s linear;
   transform: rotate(0);
-}
-@-webkit-keyframes end-btn-mobile-linha2 {
-  from {
-    transform: rotate(45deg);
-    position: absolute;
-  }
-  to {
-    transform: rotate(0);
-    position: absolute;
-  }
 }
 @keyframes end-btn-mobile-linha2 {
   from {
@@ -390,17 +300,8 @@ section .position-section {
   }
 }
 .btn-menu-mobile-desativo .linha3 {
-  -webkit-animation: end-btn-mobile-linha3 0.5s linear;
-          animation: end-btn-mobile-linha3 0.5s linear;
+  animation: end-btn-mobile-linha3 0.5s linear;
   opacity: 100%;
-}
-@-webkit-keyframes end-btn-mobile-linha3 {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 100%;
-  }
 }
 @keyframes end-btn-mobile-linha3 {
   from {
@@ -484,9 +385,6 @@ section .position-section {
   }
 }
 .field-cadastrar div div .input-text::-moz-placeholder {
-  color: rgba(51, 51, 51, 0.252);
-}
-.field-cadastrar div div .input-text:-ms-input-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
 .field-cadastrar div div .input-text::placeholder {
@@ -593,9 +491,6 @@ section .position-section {
 .field-excluir div div .input-text::-moz-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-.field-excluir div div .input-text:-ms-input-placeholder {
-  color: rgba(51, 51, 51, 0.252);
-}
 .field-excluir div div .input-text::placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
@@ -663,9 +558,6 @@ section .position-section {
   }
 }
 .field-consultar div form > div .input-text::-moz-placeholder {
-  color: rgba(51, 51, 51, 0.252);
-}
-.field-consultar div form > div .input-text:-ms-input-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
 .field-consultar div form > div .input-text::placeholder {
@@ -786,9 +678,6 @@ section .position-section {
 #modal > div form div .input-text::-moz-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-#modal > div form div .input-text:-ms-input-placeholder {
-  color: rgba(51, 51, 51, 0.252);
-}
 #modal > div form div .input-text::placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
@@ -857,9 +746,6 @@ section .position-section {
   width: 40%;
 }
 .field-alterar div div .input-text::-moz-placeholder {
-  color: rgba(51, 51, 51, 0.252);
-}
-.field-alterar div div .input-text:-ms-input-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
 .field-alterar div div .input-text::placeholder {
