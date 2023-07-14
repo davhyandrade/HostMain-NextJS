@@ -1,13 +1,10 @@
 import React, { useEffect, useContext } from "react";
 import axios from "axios";
 import { useRouter } from "next/router";
-import { divContext } from "../../components/MainContainer";
+import { Context } from '../../context/layout';
 
 export default function Cursos() {
-    const { handleChangeData } = useContext(divContext);
-    const { data } = useContext(divContext);
-    const { setData } = useContext(divContext);
-    const { alterarCursos } = useContext(divContext);
+    const { handleChangeData, data, setData, alterarCursos }: any = useContext(Context);
 
     const codcurso = alterarCursos[0].CodCurso;
     const nome = alterarCursos[0].Nome;

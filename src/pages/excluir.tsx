@@ -1,12 +1,11 @@
 import React, { useContext } from "react";
 import axios from "axios";
-import { divContext } from "../components/MainContainer";
+import { Context } from '../context/layout';
 import Head from "next/head";
 import { useRouter } from "next/router";
 
 export default function Excluir() {
-    const { handleChangeData } = useContext(divContext);
-    const { data } = useContext(divContext);
+    const { handleChangeData, data } = useContext(Context);
 
     const router = useRouter();
 

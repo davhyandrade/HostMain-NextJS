@@ -1,11 +1,10 @@
 import React, { useContext, useState } from "react";
 import axios from "axios";
-import { divContext } from "../components/MainContainer";
+import { Context } from '../context/layout';
 import Head from "next/head";
 
 export default function Pesquisar() {
-    const { handleChangeData } = useContext(divContext);
-    const { data } = useContext(divContext);
+    const { handleChangeData, data } = useContext(Context);
 
     const [consultarAlunos, setConsultarAlunos] = useState<any>();
     const [consultarDisciplinas, setConsultarDisciplinas] = useState<any>();

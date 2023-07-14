@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
-import { divContext } from '../components/MainContainer';
+import { Context } from '../context/layout';
 import axios from "axios";
 import Head from "next/head";
 
 export default function Cadastrar() {
-    const { handleChangeData } = useContext(divContext);
-    const { data } = useContext(divContext);
+    const { handleChangeData, data } = useContext(Context);
 
     function handleFormAlunos() {
         axios.post('/api/alunos', {
