@@ -12,18 +12,18 @@ export default function Menu() {
     let domain = "https://hostmain.vercel.app";
 
     useEffect(() => {
-      if (url === `${domain}/cadastrar`) {
-        setIsButtonMenuAtivo({ cadastrar: true });
-      } else if (url === `${domain}/listar`) {
-        setIsButtonMenuAtivo({ listar: true });
-      } else if (url === `${domain}/alterar`) {
-        setIsButtonMenuAtivo({ alterar: true });
-      } else if (url === `${domain}/excluir`) {
-        setIsButtonMenuAtivo({ excluir: true });
-      } else if (url === `${domain}/pesquisar`) {
-        setIsButtonMenuAtivo({ pesquisar: true });
+      if (url === `${domain}/register`) {
+        setIsButtonMenuAtivo({ register: true });
+      } else if (url === `${domain}/get`) {
+        setIsButtonMenuAtivo({ get: true });
+      } else if (url === `${domain}/edit`) {
+        setIsButtonMenuAtivo({ edit: true });
+      } else if (url === `${domain}/delete`) {
+        setIsButtonMenuAtivo({ delete: true });
+      } else if (url === `${domain}/search`) {
+        setIsButtonMenuAtivo({ search: true });
       } else {
-        setIsButtonMenuAtivo({ cadastrar: true });
+        setIsButtonMenuAtivo({ register: true });
       }
     }, []);
   }
@@ -35,9 +35,9 @@ export default function Menu() {
           HostMain
         </a>
         <nav className="btn-menu">
-          <div className={`${isButtonMenuAtivo.cadastrar && "ativo"}`}>
-            <Link href="/cadastrar" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ cadastrar: true })}>
+          <div className={`${isButtonMenuAtivo.register && "ativo"}`}>
+            <Link href="/register" legacyBehavior>
+              <a onClick={() => setIsButtonMenuAtivo({ register: true })}>
                 <ul>
                   <img
                     src="https://i.postimg.cc/m2Tj0tJV/vetor-calendario.png"
@@ -48,9 +48,9 @@ export default function Menu() {
               </a>
             </Link>
           </div>
-          <div className={`${isButtonMenuAtivo.listar && "ativo"}`}>
-            <Link href="/listar" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ listar: true })}>
+          <div className={`${isButtonMenuAtivo.get && "ativo"}`}>
+            <Link href="/get" legacyBehavior>
+              <a onClick={() => setIsButtonMenuAtivo({ get: true })}>
                 <ul>
                   <img
                     src="https://i.postimg.cc/J7xZHKYc/vetor-list.png"
@@ -61,12 +61,12 @@ export default function Menu() {
               </a>
             </Link>
           </div>
-          <div className={`${isButtonMenuAtivo.alterar && "ativo"}`}>
-            <Link href="/alterar" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ alterar: true })}>
+          <div className={`${isButtonMenuAtivo.edit && "ativo"}`}>
+            <Link href="/edit" legacyBehavior>
+              <a onClick={() => setIsButtonMenuAtivo({ edit: true })}>
                 <ul>
                   <img
-                    src="https://i.postimg.cc/fWPWP9VQ/vetor-alterar.png"
+                    src="https://i.postimg.cc/fWPWP9VQ/vetor-edit.png"
                     alt="vetor"
                   />
                   <p>Alterar</p>
@@ -74,13 +74,13 @@ export default function Menu() {
               </a>
             </Link>
           </div>
-          <div className={`${isButtonMenuAtivo.excluir && "ativo"}`}>
-            <Link href="/excluir" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ excluir: true })}>
+          <div className={`${isButtonMenuAtivo.delete && "ativo"}`}>
+            <Link href="/delete" legacyBehavior>
+              <a onClick={() => setIsButtonMenuAtivo({ delete: true })}>
                 <ul>
                   <div>
                     <img
-                      src="https://i.postimg.cc/6pcpY1RY/vetor-excluir.png"
+                      src="https://i.postimg.cc/6pcpY1RY/vetor-delete.png"
                       alt="vetor"
                     />
                     <p>Excluir</p>
@@ -89,9 +89,9 @@ export default function Menu() {
               </a>
             </Link>
           </div>
-          <div className={`${isButtonMenuAtivo.pesquisar && "ativo"}`}>
-            <Link href="/pesquisar" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ pesquisar: true })}>
+          <div className={`${isButtonMenuAtivo.search && "ativo"}`}>
+            <Link href="/search" legacyBehavior>
+              <a onClick={() => setIsButtonMenuAtivo({ search: true })}>
                 <ul>
                   <div>
                     <img

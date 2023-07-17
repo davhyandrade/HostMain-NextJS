@@ -7,7 +7,7 @@ export default function NotFound() {
     
     useEffect(() => {
         setTimeout(() => {
-            router.push('/cadastrar');
+            router.push('/register');
             setTimeout(() => {
                 window.location.reload();
             }, 200)

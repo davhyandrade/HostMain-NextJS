@@ -11,12 +11,12 @@ interface IContext {
   handleChangeData?: any;
   data?: any;
   setData?: any;
-  setAlterarAlunos?: any; 
-  alterarAlunos?: object;
-  setAlterarDisciplinas?: any; 
-  alterarDisciplinas?: object
-  setAlterarCursos?: any;
-  alterarCursos?: object
+  setEditAlunos?: any; 
+  editAlunos?: object;
+  setEditDisciplinas?: any; 
+  editDisciplinas?: object
+  setEditCursos?: any;
+  editCursos?: object
 }
 
 export const Context = createContext<IContext>({});
@@ -28,7 +28,7 @@ type ComponentProps = {
 export default function Layout({ children }: ComponentProps) {
   const router = useRouter();
 
-  const [alterarAlunos, setAlterarAlunos] = useState<any>({
+  const [editAlunos, setEditAlunos] = useState<any>({
     [0]: {
       Matricula: '',
       Nome: '',
@@ -38,7 +38,7 @@ export default function Layout({ children }: ComponentProps) {
     },
   });
 
-  const [alterarDisciplinas, setAlterarDisciplinas] = useState<any>({
+  const [editDisciplinas, setEditDisciplinas] = useState<any>({
     [0]: {
       CodCurso: '',
       CodDisciplina: '',
@@ -46,7 +46,7 @@ export default function Layout({ children }: ComponentProps) {
     },
   });
 
-  const [alterarCursos, setAlterarCursos] = useState<any>({
+  const [editCursos, setEditCursos] = useState<any>({
     [0]: {
       CodCurso: '',
       Nome: '',
@@ -70,27 +70,27 @@ export default function Layout({ children }: ComponentProps) {
 
     let domain = 'https://hostmain.vercel.app';
 
-    if (url === `${domain}/alterar/cursos`) {
-      if (typeof alterarCursos[0] === 'undefined') {
+    if (url === `${domain}/edit/curso`) {
+      if (typeof editCursos[0] === 'undefined') {
         alert('404 error: not found - Código inexistente');
         setTimeout(() => {
-          router.push('/alterar');
+          router.push('/edit');
           window.location.reload();
         });
       }
-    } else if (url === `${domain}/alterar/alunos`) {
-      if (typeof alterarAlunos[0] === 'undefined') {
+    } else if (url === `${domain}/edit/aluno`) {
+      if (typeof editAlunos[0] === 'undefined') {
         alert('404 error: not found - Matricula inexistente');
         setTimeout(() => {
-          router.push('/alterar');
+          router.push('/edit');
           window.location.reload();
         });
       }
-    } else if (url === `${domain}/alterar/disciplinas`) {
-      if (typeof alterarDisciplinas[0] === 'undefined') {
+    } else if (url === `${domain}/edit/disciplina`) {
+      if (typeof editDisciplinas[0] === 'undefined') {
         alert('404 error: not found - Código inexistente');
         setTimeout(() => {
-          router.push('/alterar');
+          router.push('/edit');
           window.location.reload();
         });
       }
@@ -106,12 +106,12 @@ export default function Layout({ children }: ComponentProps) {
           handleChangeData,
           data,
           setData, 
-          setAlterarAlunos, 
-          alterarAlunos, 
-          setAlterarDisciplinas, 
-          alterarDisciplinas,
-          setAlterarCursos,
-          alterarCursos,
+          setEditAlunos, 
+          editAlunos, 
+          setEditDisciplinas, 
+          editDisciplinas,
+          setEditCursos,
+          editCursos,
           setIsActiveToggleMenu,
           isActiveToggleMenu,
         }}

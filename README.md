@@ -24,9 +24,9 @@ Desenvolvido pelo `Next JS`, com o backend trabalhado con `Node JS` e `MySQL`, c
             const { CodDisc2 } = request.body;
             const { CodDisc3 } = request.body;
         
-            let sqlCadastrar = 'insert into curso values (?, ?, ?, ?, ?)';
+            let sqlRegister = 'insert into curso values (?, ?, ?, ?, ?)';
         
-            db.query(sqlCadastrar, [CodCurso, Nome, CodDisc1, CodDisc2, CodDisc3], (err, result) => {
+            db.query(sqlRegister, [CodCurso, Nome, CodDisc1, CodDisc2, CodDisc3], (err, result) => {
                 console.log(err);
             })
             break
@@ -40,9 +40,9 @@ Desenvolvido pelo `Next JS`, com o backend trabalhado con `Node JS` e `MySQL`, c
 ```js
     switch (method.request) {
         case 'GET':
-            let sqlListar = 'select * from curso order by Nome';
+            let sqlGet = 'select * from curso order by Nome';
 
-            db.query(sqlListar, (err, result) => {
+            db.query(sqlGet, (err, result) => {
                 if(err) {
                     console.log(err);
                 } else {
@@ -80,9 +80,9 @@ Desenvolvido pelo `Next JS`, com o backend trabalhado con `Node JS` e `MySQL`, c
 ```js
     switch (method.request) {
         case 'POST':
-            let sqlPesquisar = "select * from curso where Nome like '%" + id + "%'";
+            let sqlSearch = "select * from curso where Nome like '%" + id + "%'";
 
-            db.query(sqlPesquisar, [id], (err, result) => {
+            db.query(sqlSearch, [id], (err, result) => {
                 if(err) {
                     console.log(err);
                 } else {
@@ -103,9 +103,9 @@ Desenvolvido pelo `Next JS`, com o backend trabalhado con `Node JS` e `MySQL`, c
     const { id } = request.query;
 
     if(method.request === 'POST') {
-        let sqlSelecionar = "select * from curso where CodCurso = ?";
+        let sqlSelect = "select * from curso where CodCurso = ?";
 
-        db.query(sqlSelecionar, [id], (err, result) => {
+        db.query(sqlSelect, [id], (err, result) => {
             if(err) {
                 console.log(err);
             } else {

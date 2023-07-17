@@ -5,6 +5,43 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+svg {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+
+input:not(:-moz-placeholder-shown):invalid {
+  border: none;
+  outline: 2px solid rgba(255, 40, 40, 0.5294117647);
+  animation: shake 0.1s;
+  animation-iteration-count: 3;
+}
+
+input:not(:placeholder-shown):invalid {
+  border: none;
+  outline: 2px solid rgba(255, 40, 40, 0.5294117647);
+  animation: shake 0.1s;
+  animation-iteration-count: 3;
+}
+@keyframes shake {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(5px, 1px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  75% {
+    transform: translate(-5px, -1px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 body {
   background: #ebeff3;
   overflow-x: hidden;
@@ -55,6 +92,9 @@ section .position-section, main .position-section {
   font-size: 2.2rem;
   text-decoration: none;
   font-weight: bold;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 .menu .position-menu .btn-menu {
   width: 100%;
@@ -204,26 +244,26 @@ section .position-section, main .position-section {
   }
 }
 
-.field-cadastrar {
+.register-field {
   display: flex;
 }
-.field-cadastrar div {
+.register-field div {
   display: flex;
   flex-direction: column;
 }
 @media screen and (max-width: 800px) {
-  .field-cadastrar div div {
+  .register-field div div {
     width: 95%;
     margin: 0 auto;
   }
 }
-.field-cadastrar div div label {
+.register-field div div label {
   font-size: 15px;
   color: #333;
   margin-bottom: 5px;
   margin-top: 15px;
 }
-.field-cadastrar div div .input-text {
+.register-field div div .input-text {
   padding: 6px;
   border-radius: 5px;
   border: 1px solid #cdd8df;
@@ -232,25 +272,28 @@ section .position-section, main .position-section {
   width: 40%;
 }
 @media screen and (max-width: 800px) {
-  .field-cadastrar div div .input-text {
+  .register-field div div .input-text {
     width: 100%;
   }
 }
-.field-cadastrar div div .input-text::-moz-placeholder {
+.register-field div div .input-text::-moz-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-.field-cadastrar div div .input-text::placeholder {
+.register-field div div .input-text::placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-.field-cadastrar div .input-number {
+.register-field div .input-number {
   width: 20%;
 }
 @media screen and (max-width: 800px) {
-  .field-cadastrar div .input-number {
+  .register-field div .input-number {
     width: 100%;
   }
 }
-.field-cadastrar div .btn-submit {
+.register-field div .btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 30px;
   width: 30%;
   border-radius: 5px;
@@ -261,44 +304,47 @@ section .position-section, main .position-section {
   color: white;
   font-weight: bold;
 }
-.field-cadastrar div .btn-submit:hover {
+.register-field div .btn-submit:hover {
   transition: 1s;
   background: #2e578b;
 }
-.field-cadastrar div .btn-submit:active {
+.register-field div .btn-submit:active {
   transition: 0.1s;
   background: black;
 }
 @media screen and (max-width: 800px) {
-  .field-cadastrar div .btn-submit {
+  .register-field div .btn-submit {
     width: 100%;
     margin-top: 30px;
   }
 }
+.register-field div .btn-submit > .loader {
+  color: #ffffff;
+}
 
-.field-listar {
+.get-field {
   display: flex;
 }
-.field-listar div {
+.get-field div {
   flex-direction: column;
 }
-.field-listar div table {
+.get-field div table {
   width: 100%;
   margin-top: 30px;
 }
-.field-listar div table th {
+.get-field div table th {
   color: white;
   padding: 10px 40px;
   background: #cdd8df;
   border-radius: 5px;
 }
 @media screen and (max-width: 800px) {
-  .field-listar div table th {
+  .get-field div table th {
     padding: 5px 10px;
     font-size: 0.5em;
   }
 }
-.field-listar div table td {
+.get-field div table td {
   color: gray;
   text-align: center;
   padding: 10px 40px;
@@ -307,32 +353,36 @@ section .position-section, main .position-section {
   font-size: 15px;
 }
 @media screen and (max-width: 800px) {
-  .field-listar div table td {
+  .get-field div table td {
     padding: 5px 14px;
     font-size: 0.5em;
   }
 }
+.get-field div > span {
+  font-size: 1rem;
+  color: gray;
+}
 
-.field-excluir {
+.delete-field {
   display: flex;
 }
-.field-excluir div {
+.delete-field div {
   display: flex;
   flex-direction: column;
 }
 @media screen and (max-width: 800px) {
-  .field-excluir div div {
+  .delete-field div div {
     width: 95%;
     margin: 0 auto;
   }
 }
-.field-excluir div div label {
+.delete-field div div label {
   font-size: 15px;
   color: #333;
   margin-top: 15px;
   margin-bottom: 5px;
 }
-.field-excluir div div .input-text {
+.delete-field div div .input-text {
   padding: 6px;
   border-radius: 5px;
   border: 1px solid #cdd8df;
@@ -340,18 +390,21 @@ section .position-section, main .position-section {
   background: rgba(205, 216, 223, 0.2352941176);
   width: 40%;
 }
-.field-excluir div div .input-text::-moz-placeholder {
+.delete-field div div .input-text::-moz-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-.field-excluir div div .input-text::placeholder {
+.delete-field div div .input-text::placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
 @media screen and (max-width: 800px) {
-  .field-excluir div div .input-text {
+  .delete-field div div .input-text {
     width: 100%;
   }
 }
-.field-excluir div .btn-submit-excluir {
+.delete-field div .btn-submit-delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 10px 30px;
   width: 30%;
   border-radius: 5px;
@@ -362,40 +415,43 @@ section .position-section, main .position-section {
   color: white;
   font-weight: bold;
 }
-.field-excluir div .btn-submit-excluir:hover {
+.delete-field div .btn-submit-delete:hover {
   transition: 1s;
   background: #2e578b;
 }
-.field-excluir div .btn-submit-excluir:active {
+.delete-field div .btn-submit-delete:active {
   transition: 0.1s;
   background: black;
 }
 @media screen and (max-width: 800px) {
-  .field-excluir div .btn-submit-excluir {
+  .delete-field div .btn-submit-delete {
     width: 100%;
   }
 }
+.delete-field div .btn-submit-delete > .loader {
+  color: #ffffff;
+}
 
-.field-consultar {
+.search-field {
   display: flex;
 }
-.field-consultar div {
+.search-field div {
   display: flex;
   flex-direction: column;
 }
 @media screen and (max-width: 800px) {
-  .field-consultar div form > div {
+  .search-field div form > div {
     width: 95%;
     margin: 0 auto;
   }
 }
-.field-consultar div form > div label {
+.search-field div form > div label {
   font-size: 15px;
   color: #333;
   margin-top: 15px;
   margin-bottom: 5px;
 }
-.field-consultar div form > div .input-text {
+.search-field div form > div .input-text {
   padding: 6px;
   border-radius: 5px;
   border: 1px solid #cdd8df;
@@ -405,17 +461,20 @@ section .position-section, main .position-section {
   width: 40%;
 }
 @media screen and (max-width: 800px) {
-  .field-consultar div form > div .input-text {
+  .search-field div form > div .input-text {
     width: 100%;
   }
 }
-.field-consultar div form > div .input-text::-moz-placeholder {
+.search-field div form > div .input-text::-moz-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-.field-consultar div form > div .input-text::placeholder {
+.search-field div form > div .input-text::placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-.field-consultar div form .btn-submit-consultar {
+.search-field div form .btn-submit-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 30px;
   width: 30%;
   border-radius: 5px;
@@ -425,36 +484,39 @@ section .position-section, main .position-section {
   color: white;
   font-weight: bold;
 }
-.field-consultar div form .btn-submit-consultar:hover {
+.search-field div form .btn-submit-search:hover {
   transition: 1s;
   background: #2e578b;
 }
-.field-consultar div form .btn-submit-consultar:active {
+.search-field div form .btn-submit-search:active {
   transition: 0.1s;
   background: black;
 }
 @media screen and (max-width: 800px) {
-  .field-consultar div form .btn-submit-consultar {
+  .search-field div form .btn-submit-search {
     width: 100%;
   }
 }
-.field-consultar div table {
+.search-field div form .btn-submit-search > .loader {
+  color: #ffffff;
+}
+.search-field div table {
   width: 100%;
   margin-top: 30px;
 }
-.field-consultar div table th {
+.search-field div table th {
   color: white;
   padding: 10px 40px;
   background: #cdd8df;
   border-radius: 5px;
 }
 @media screen and (max-width: 800px) {
-  .field-consultar div table th {
+  .search-field div table th {
     padding: 5px 10px;
     font-size: 0.5em;
   }
 }
-.field-consultar div table td {
+.search-field div table td {
   color: gray;
   text-align: center;
   padding: 10px 40px;
@@ -463,10 +525,23 @@ section .position-section, main .position-section {
   font-size: 15px;
 }
 @media screen and (max-width: 800px) {
-  .field-consultar div table td {
+  .search-field div table td {
     padding: 5px 10px;
     font-size: 0.5em;
   }
+}
+.search-field div > span {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  background-color: rgba(205, 216, 223, 0.2352941176);
+  border: 1px solid rgba(205, 216, 223, 0.3411764706);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: gray;
+  margin-top: 20px;
 }
 
 #modal {
@@ -533,12 +608,16 @@ section .position-section, main .position-section {
 #modal > div form div .input-text::placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-#modal > div form .field-buttons {
+#modal > div form .buttons-field {
   display: flex;
   width: 100%;
   justify-content: right;
+  gap: 10px;
 }
-#modal > div form .field-buttons .btn-submit {
+#modal > div form .buttons-field .btn-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 30px;
   width: 20%;
   border-radius: 5px;
@@ -549,47 +628,69 @@ section .position-section, main .position-section {
   color: white;
   font-weight: bold;
 }
-#modal > div form .field-buttons .btn-submit:hover {
+#modal > div form .buttons-field .btn-submit:hover {
   transition: 1s;
   background: #2e578b;
 }
-#modal > div form .field-buttons .btn-submit:active {
+#modal > div form .buttons-field .btn-submit:active {
   transition: 0.1s;
   background: black;
 }
 @media screen and (max-width: 800px) {
-  #modal > div form .field-buttons .btn-submit {
+  #modal > div form .buttons-field .btn-submit {
     width: 50%;
   }
 }
-#modal > div form .field-buttons .btn-submit:nth-child(1):hover {
+#modal > div form .buttons-field .btn-submit > .loader {
+  color: #ffffff;
+}
+#modal > div form .buttons-field .btn-submit:nth-child(1):hover {
   transition: 1s;
   background: rgba(139, 46, 46, 0.7215686275);
 }
-#modal > div form .field-buttons .btn-submit:nth-child(2) {
-  margin-left: 10px;
+#modal > div form .buttons-field .btn-submit:nth-child(2) {
+  width: 30%;
+}
+#modal > div form .buttons-field .btn-submit:nth-child(2) > .loader {
+  margin: 0;
+  width: 10px;
+  height: 8px;
+  animation: animloader 0.9s 0.6s ease infinite alternate;
+}
+#modal > div form .buttons-field .btn-submit:nth-child(2) > .loader::after, #modal > div form .buttons-field .btn-submit:nth-child(2) > .loader::before {
+  width: 10px;
+  height: 8px;
+  animation: animloader 0.6s ease infinite alternate;
+}
+@keyframes animloader {
+  0% {
+    width: 10px;
+  }
+  100% {
+    width: 15px;
+  }
 }
 
-.field-alterar {
+.edit-field {
   display: flex;
 }
-.field-alterar div {
+.edit-field div {
   display: flex;
   flex-direction: column;
 }
 @media screen and (max-width: 800px) {
-  .field-alterar div div {
+  .edit-field div div {
     width: 95%;
     margin: 0 auto;
   }
 }
-.field-alterar div div label {
+.edit-field div div label {
   font-size: 15px;
   color: #333;
   margin-top: 15px;
   margin-bottom: 5px;
 }
-.field-alterar div div .input-text {
+.edit-field div div .input-text {
   padding: 6px;
   border-radius: 5px;
   border: 1px solid #cdd8df;
@@ -597,26 +698,29 @@ section .position-section, main .position-section {
   background: rgba(205, 216, 223, 0.2352941176);
   width: 40%;
 }
-.field-alterar div div .input-text::-moz-placeholder {
+.edit-field div div .input-text::-moz-placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
-.field-alterar div div .input-text::placeholder {
+.edit-field div div .input-text::placeholder {
   color: rgba(51, 51, 51, 0.252);
 }
 @media screen and (max-width: 800px) {
-  .field-alterar div div .input-text {
+  .edit-field div div .input-text {
     width: 100%;
   }
 }
-.field-alterar div div .input-number {
+.edit-field div div .input-number {
   width: 20%;
 }
 @media screen and (max-width: 800px) {
-  .field-alterar div div .input-number {
+  .edit-field div div .input-number {
     width: 100%;
   }
 }
-.field-alterar div .btn-submit-alterar {
+.edit-field div .btn-submit-edit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 10px 30px;
   width: 30%;
   border-radius: 5px;
@@ -627,18 +731,21 @@ section .position-section, main .position-section {
   color: white;
   font-weight: bold;
 }
-.field-alterar div .btn-submit-alterar:hover {
+.edit-field div .btn-submit-edit:hover {
   transition: 1s;
   background: #2e578b;
 }
-.field-alterar div .btn-submit-alterar:active {
+.edit-field div .btn-submit-edit:active {
   transition: 0.1s;
   background: black;
 }
 @media screen and (max-width: 800px) {
-  .field-alterar div .btn-submit-alterar {
+  .edit-field div .btn-submit-edit {
     width: 100%;
   }
+}
+.edit-field div .btn-submit-edit > .loader {
+  color: #ffffff;
 }
 
 .header-section {
@@ -672,6 +779,9 @@ section .position-section, main .position-section {
   color: #333;
   letter-spacing: 5px;
   font-size: 1.2rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
 }
 @media screen and (max-width: 800px) {
   .header-section .position-header-section > div:nth-child(1) {
@@ -693,6 +803,9 @@ section .position-section, main .position-section {
   content: url("https://i.postimg.cc/7YnH7BrW/seta-aberta.png");
 }
 .header-section .position-header-section > div:nth-child(2) details summary {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   font-family: Arial, Helvetica, sans-serif;
   color: #333;
   font-size: 1.2rem;
@@ -812,4 +925,46 @@ section .position-section, main .position-section {
 }
 .active .toggle-menu-item::after {
   transform: rotate(-45deg) translate(35px, 35px);
+}
+
+.loader-field .loader {
+  margin-left: 55px;
+}
+
+.loader {
+  width: 20px;
+  height: 12px;
+  display: block;
+  position: relative;
+  border-radius: 4px;
+  color: #cdd8df;
+  background: currentColor;
+  box-sizing: border-box;
+  animation: animloader 0.9s 0.6s ease infinite alternate;
+}
+.loader::after, .loader::before {
+  content: "";
+  box-sizing: border-box;
+  width: 20px;
+  height: 12px;
+  background: currentColor;
+  position: absolute;
+  border-radius: 4px;
+  top: 0;
+  right: 110%;
+  animation: animloader 0.6s ease infinite alternate;
+}
+.loader::after {
+  left: 110%;
+  right: auto;
+  animation-delay: 0.6s;
+}
+
+@keyframes animloader {
+  0% {
+    width: 20px;
+  }
+  100% {
+    width: 48px;
+  }
 }/*# sourceMappingURL=globals.css.map */

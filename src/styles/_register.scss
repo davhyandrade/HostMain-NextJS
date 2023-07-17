@@ -1,0 +1,89 @@
+.register-field {
+  display: flex;
+
+  div {
+    display: flex;
+    flex-direction: column;
+
+    div {
+      @media screen and (max-width: 800px) {
+        & {
+          width: 95%;
+          margin: 0 auto;
+        }
+      }
+
+      label {
+        font-size: 15px;
+        color: #333;
+        margin-bottom: 5px;
+        margin-top: 15px;
+      }
+
+      .input-text {
+        padding: 6px;
+        border-radius: 5px;
+        border: 1px solid #cdd8df;
+        margin-top: 5px;
+        background: #cdd8df3c;
+        width: 40%;
+
+        @media screen and (max-width: 800px) {
+          & {
+            width: 100%;
+          }
+        }
+
+        &::placeholder {
+          color: rgba(51, 51, 51, 0.252);
+        }
+      }
+    }
+
+    .input-number {
+      width: 20%;
+
+      @media screen and (max-width: 800px) {
+        & {
+          width: 100%;
+        }
+      }
+    }
+
+    .btn-submit {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 30px;
+      width: 30%;
+      border-radius: 5px;
+      border: none;
+      cursor: pointer;
+      margin-top: 15px;
+      background: #cdd8df;
+      color: white;
+      font-weight: bold;
+
+      &:hover {
+        transition: 1s;
+        background: #2e578b;
+      }
+
+      &:active {
+        transition: 0.1s;
+        background: black;
+      }
+
+      @media screen and (max-width: 800px) {
+        & {
+          width: 100%;
+          margin-top: 30px;
+        }
+      }
+
+      > .loader {
+        color: #ffffff;
+      }
+    }
+  }
+}
