@@ -132,14 +132,14 @@ section .position-section, main .position-section {
     padding: 25px 25px 25px 0;
   }
 }
-.menu .position-menu .btn-menu div > a ul img {
+.menu .position-menu .btn-menu div > a ul svg {
   margin-left: 3px;
   width: 25px;
   margin-right: 10px;
   opacity: 50%;
 }
 @media screen and (max-width: 800px) {
-  .menu .position-menu .btn-menu div > a ul img {
+  .menu .position-menu .btn-menu div > a ul svg {
     width: 35px;
   }
 }
@@ -153,7 +153,7 @@ section .position-section, main .position-section {
   color: white;
   opacity: 100%;
 }
-.menu .position-menu .btn-menu div > a ul:hover img {
+.menu .position-menu .btn-menu div > a ul:hover svg {
   transition: 1s;
   opacity: 100%;
 }
@@ -168,7 +168,7 @@ section .position-section, main .position-section {
   background: #284b77;
   color: white;
 }
-.menu .position-menu .btn-menu .ativo img {
+.menu .position-menu .btn-menu .ativo svg {
   opacity: 100%;
 }
 .menu .position-menu .btn-menu .ativo p {
@@ -770,7 +770,7 @@ section .position-section, main .position-section {
   align-items: center;
   cursor: default;
 }
-.header-section .position-header-section > div:nth-child(1) img {
+.header-section .position-header-section > div:nth-child(1) svg {
   width: 30px;
 }
 .header-section .position-header-section > div:nth-child(1) p {

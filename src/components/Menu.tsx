@@ -1,6 +1,11 @@
 import Link from "next/link";
 import React, { useState, useEffect, useContext } from "react";
 import { Context } from "../context/layout";
+import RegisterSvg from '../../public/images/register.svg';
+import GetSvg from '../../public/images/get.svg';
+import EditSvg from '../../public/images/edit.svg';
+import DeleteSvg from '../../public/images/delete.svg';
+import SearchSvg from '../../public/images/search.svg';
 
 export default function Menu() {
   const { isActiveToggleMenu } = useContext(Context) 
@@ -39,10 +44,7 @@ export default function Menu() {
             <Link href="/register" legacyBehavior>
               <a onClick={() => setIsButtonMenuAtivo({ register: true })}>
                 <ul>
-                  <img
-                    src="https://i.postimg.cc/m2Tj0tJV/vetor-calendario.png"
-                    alt="vetor"
-                  />
+                  <RegisterSvg />
                   <p>Cadastrar</p>
                 </ul>
               </a>
@@ -52,10 +54,7 @@ export default function Menu() {
             <Link href="/get" legacyBehavior>
               <a onClick={() => setIsButtonMenuAtivo({ get: true })}>
                 <ul>
-                  <img
-                    src="https://i.postimg.cc/J7xZHKYc/vetor-list.png"
-                    alt="vetor"
-                  />
+                  <GetSvg />
                   <p>Listar</p>
                 </ul>
               </a>
@@ -65,10 +64,7 @@ export default function Menu() {
             <Link href="/edit" legacyBehavior>
               <a onClick={() => setIsButtonMenuAtivo({ edit: true })}>
                 <ul>
-                  <img
-                    src="https://i.postimg.cc/fWPWP9VQ/vetor-edit.png"
-                    alt="vetor"
-                  />
+                  <EditSvg />
                   <p>Alterar</p>
                 </ul>
               </a>
@@ -79,10 +75,7 @@ export default function Menu() {
               <a onClick={() => setIsButtonMenuAtivo({ delete: true })}>
                 <ul>
                   <div>
-                    <img
-                      src="https://i.postimg.cc/6pcpY1RY/vetor-delete.png"
-                      alt="vetor"
-                    />
+                    <DeleteSvg />
                     <p>Excluir</p>
                   </div>
                 </ul>
@@ -94,10 +87,7 @@ export default function Menu() {
               <a onClick={() => setIsButtonMenuAtivo({ search: true })}>
                 <ul>
                   <div>
-                    <img
-                      src="https://i.postimg.cc/MHpDfLyN/vetor-pesquisa.png"
-                      alt="vetor"
-                    />
+                    <SearchSvg />
                     <p>Pesquisar</p>
                   </div>
                 </ul>

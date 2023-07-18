@@ -62,7 +62,7 @@
               }
             }
 
-            img {
+            svg {
               margin-left: 3px;
               width: 25px;
               margin-right: 10px;
@@ -87,7 +87,7 @@
               opacity: 100%;
             }
 
-            &:hover img {
+            &:hover svg {
               transition: 1s;
               opacity: 100%;
             }
@@ -108,7 +108,7 @@
         background: #284b77;
         color: white;
 
-        img {
+        svg {
           opacity: 100%;
         }
 

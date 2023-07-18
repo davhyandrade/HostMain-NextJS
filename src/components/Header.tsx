@@ -1,6 +1,7 @@
 import { useContext } from 'react';
 import { Context } from '../context/layout';
 import Link from 'next/link';
+import Globe from '../../public/images/globe.svg';
 
 export default function Header() {
   const { isActiveToggleMenu, setIsActiveToggleMenu }: any = useContext(Context);
@@ -17,10 +18,7 @@ export default function Header() {
     <header className="header-section">
       <div className="position-header-section">
         <div>
-          <img
-            src="https://i.postimg.cc/9QcLN3Bd/image-removebg-preview-2022-10-03-T163131-505.png"
-            alt="Vetor Planeta"
-          />
+          <Globe/>
           <p>CRUD</p>
         </div>
         <div>
