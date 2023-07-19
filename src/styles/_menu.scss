@@ -104,7 +104,7 @@
         border-top: none;
       }
 
-      .ativo {
+      .active {
         background: #284b77;
         color: white;
 
@@ -136,7 +136,7 @@
   }
 }
 
-.menu-mobile-ativo {
+.menu-mobile-active {
   display: flex;
   opacity: 100%;
   animation: start-transition-menu 0.5s linear;

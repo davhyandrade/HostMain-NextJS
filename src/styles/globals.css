@@ -164,14 +164,14 @@ section .position-section, main .position-section {
 .menu .position-menu .btn-menu div:nth-child(1) ul {
   border-top: none;
 }
-.menu .position-menu .btn-menu .ativo {
+.menu .position-menu .btn-menu .active {
   background: #284b77;
   color: white;
 }
-.menu .position-menu .btn-menu .ativo svg {
+.menu .position-menu .btn-menu .active svg {
   opacity: 100%;
 }
-.menu .position-menu .btn-menu .ativo p {
+.menu .position-menu .btn-menu .active p {
   opacity: 100%;
 }
 @media screen and (max-width: 800px) {
@@ -188,7 +188,7 @@ section .position-section, main .position-section {
   }
 }
 
-.menu-mobile-ativo {
+.menu-mobile-active {
   display: flex;
   opacity: 100%;
   animation: start-transition-menu 0.5s linear;

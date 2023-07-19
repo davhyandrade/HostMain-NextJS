@@ -1,50 +1,53 @@
-import Link from "next/link";
-import React, { useState, useEffect, useContext } from "react";
-import { Context } from "../context/layout";
+import Link from 'next/link';
+import React, { useState, useEffect, useContext } from 'react';
+import { Context } from '../context/layout';
 import RegisterSvg from '../../public/images/register.svg';
 import GetSvg from '../../public/images/get.svg';
 import EditSvg from '../../public/images/edit.svg';
 import DeleteSvg from '../../public/images/delete.svg';
 import SearchSvg from '../../public/images/search.svg';
+import { useRouter } from 'next/router';
 
 export default function Menu() {
-  const { isActiveToggleMenu } = useContext(Context) 
-  const [isButtonMenuAtivo, setIsButtonMenuAtivo] = useState<any>({});
+  const { isActiveToggleMenu } = useContext(Context);
+  const [isActiveMenuButton, setIsActiveMenuButton] = useState<string>();
 
-  if (typeof window !== "undefined") {
-    let url = window.location.href;
+  const router = useRouter();
 
-    console.log(url);
-    
-    let domain = "https://hostmain.vercel.app";
-
-    useEffect(() => {
-      if (url === `${domain}/register`) {
-        setIsButtonMenuAtivo({ register: true });
-      } else if (url === `${domain}/get`) {
-        setIsButtonMenuAtivo({ get: true });
-      } else if (url === `${domain}/edit`) {
-        setIsButtonMenuAtivo({ edit: true });
-      } else if (url === `${domain}/delete`) {
-        setIsButtonMenuAtivo({ delete: true });
-      } else if (url === `${domain}/search`) {
-        setIsButtonMenuAtivo({ search: true });
-      } else {
-        setIsButtonMenuAtivo({ register: true });
-      }
-    }, []);
-  }
+  useEffect(() => {
+    let url = router.pathname;
+    switch (url) {
+      case '/register':
+        setIsActiveMenuButton('register');
+        break;
+      case '/get':
+        setIsActiveMenuButton('get');
+        break;
+      case '/edit':
+        setIsActiveMenuButton('edit');
+        break;
+      case '/delete':
+        setIsActiveMenuButton('delete');
+        break;
+      case '/search':
+        setIsActiveMenuButton('search');
+        break;
+      default:
+        setIsActiveMenuButton('register');
+        break;
+    }
+  }, []);
 
   return (
-    <header className={`menu ${isActiveToggleMenu && 'menu-mobile-ativo'}`}>
+    <header className={`menu ${isActiveToggleMenu && 'menu-mobile-active'}`}>
       <div className="position-menu">
         <a href="/" id="btn-logo" translate="no">
           HostMain
         </a>
         <nav className="btn-menu">
-          <div className={`${isButtonMenuAtivo.register && "ativo"}`}>
+          <div className={`${isActiveMenuButton === 'register' && 'active'}`}>
             <Link href="/register" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ register: true })}>
+              <a onClick={() => setIsActiveMenuButton('register')}>
                 <ul>
                   <RegisterSvg />
                   <p>Cadastrar</p>
@@ -52,9 +55,9 @@ export default function Menu() {
               </a>
             </Link>
           </div>
-          <div className={`${isButtonMenuAtivo.get && "ativo"}`}>
+          <div className={`${isActiveMenuButton === 'get' && 'active'}`}>
             <Link href="/get" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ get: true })}>
+              <a onClick={() => setIsActiveMenuButton('get')}>
                 <ul>
                   <GetSvg />
                   <p>Listar</p>
@@ -62,9 +65,9 @@ export default function Menu() {
               </a>
             </Link>
           </div>
-          <div className={`${isButtonMenuAtivo.edit && "ativo"}`}>
+          <div className={`${isActiveMenuButton === 'edit' && 'active'}`}>
             <Link href="/edit" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ edit: true })}>
+              <a onClick={() => setIsActiveMenuButton('edit')}>
                 <ul>
                   <EditSvg />
                   <p>Alterar</p>
@@ -72,9 +75,9 @@ export default function Menu() {
               </a>
             </Link>
           </div>
-          <div className={`${isButtonMenuAtivo.delete && "ativo"}`}>
+          <div className={`${isActiveMenuButton === 'delete' && 'active'}`}>
             <Link href="/delete" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ delete: true })}>
+              <a onClick={() => setIsActiveMenuButton('delete')}>
                 <ul>
                   <div>
                     <DeleteSvg />
@@ -84,9 +87,9 @@ export default function Menu() {
               </a>
             </Link>
           </div>
-          <div className={`${isButtonMenuAtivo.search && "ativo"}`}>
+          <div className={`${isActiveMenuButton === 'search' && 'active'}`}>
             <Link href="/search" legacyBehavior>
-              <a onClick={() => setIsButtonMenuAtivo({ search: true })}>
+              <a onClick={() => setIsActiveMenuButton('search')}>
                 <ul>
                   <div>
                     <SearchSvg />
@@ -97,7 +100,7 @@ export default function Menu() {
             </Link>
           </div>
         </nav>
-      </div> 
+      </div>
     </header>
   );
 }
