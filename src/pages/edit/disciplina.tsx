@@ -4,6 +4,13 @@ import { useRouter } from 'next/router';
 import { Context } from '../../context/layout';
 import Loader from '../../components/Loader';
 import { toast } from 'react-toastify';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyles = createGlobalStyle`    
+  .position-section {
+    width: 100% !important;
+  }
+`;
 
 export default function Disciplina() {
   const { handleChangeData, data, setData, editDisciplinas }: any = useContext(Context);
@@ -28,16 +35,7 @@ export default function Disciplina() {
     return handleCancelButton();
   }
 
-  function handleCancelButton() {
-    setTimeout(() => {
-      router.push('/edit');
-      if (window.innerWidth > 800) {
-        document.querySelector<any | null>('.position-section').style.width = '87%';
-      } else {
-        document.querySelector<any | null>('.position-section').style.width = '97%';
-      }
-    }, 500);
-  }
+  const handleCancelButton = () => router.push('/edit');
 
   function handleForm(event: FormEvent) {
     event.preventDefault();
@@ -57,58 +55,57 @@ export default function Disciplina() {
   }, []);
 
   useEffect(() => {
-    if (editDisciplinas[0] === '') router.push('/edit');
+    if (editDisciplinas[0].CodDisciplina === '') router.push('/edit');
   }, []);
 
-  if (typeof document !== 'undefined') {
-    document.querySelector<any | null>('.position-section').style.width = '100%';
-  }
-
   return (
-    <div id="modal">
-      <div>
-        <form onSubmit={handleForm}>
-          <h1>Alterar Disciplinas</h1>
-          <div>
-            <label htmlFor="input-nome-disciplina">Nome</label>
-            <input
-              onChange={handleChangeData}
-              name="nome_disciplina"
-              defaultValue={nome}
-              id="input-nome-disciplina"
-              className="input-text"
-              type="text"
-              placeholder="Digite o nome da disciplina"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="input-codigo-disciplina">Código</label>
-            <input
-              name="codigo_disciplina"
-              value={id}
-              id="input-codigo-disciplina"
-              className="input-number input-text"
-              type="text"
-              placeholder="Digite o código da disciplina"
-              pattern="\d*"
-              required
-            />
-          </div>
-          <div className="buttons-field">
-            <input
-              onClick={handleCancelButton}
-              name="btn_submit_2"
-              className="btn-submit"
-              type="reset"
-              value="Cancelar"
-            />
-            <button className="btn-submit" type="submit">
-              {isActiveSaveButton ? <Loader /> : 'Salvar'}
-            </button>
-          </div>
-        </form>
+    <>
+      <GlobalStyles />
+      <div id="modal">
+        <div>
+          <form onSubmit={handleForm}>
+            <h1>Alterar Disciplinas</h1>
+            <div>
+              <label htmlFor="input-nome-disciplina">Nome</label>
+              <input
+                onChange={handleChangeData}
+                name="nome_disciplina"
+                defaultValue={nome}
+                id="input-nome-disciplina"
+                className="input-text"
+                type="text"
+                placeholder="Digite o nome da disciplina"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="input-codigo-disciplina">Código</label>
+              <input
+                name="codigo_disciplina"
+                value={id}
+                id="input-codigo-disciplina"
+                className="input-number input-text"
+                type="text"
+                placeholder="Digite o código da disciplina"
+                pattern="\d*"
+                required
+              />
+            </div>
+            <div className="buttons-field">
+              <input
+                onClick={handleCancelButton}
+                name="btn_submit_2"
+                className="btn-submit"
+                type="reset"
+                value="Cancelar"
+              />
+              <button className="btn-submit" type="submit">
+                {isActiveSaveButton ? <Loader /> : 'Salvar'}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

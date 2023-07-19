@@ -4,6 +4,13 @@ import { useRouter } from 'next/router';
 import { Context } from '../../context/layout';
 import { toast } from 'react-toastify';
 import Loader from '../../components/Loader';
+import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyles = createGlobalStyle`    
+  .position-section {
+    width: 100% !important;
+  }
+`;
 
 export default function Curso() {
   const { handleChangeData, data, setData, editCursos }: any = useContext(Context);
@@ -31,16 +38,7 @@ export default function Curso() {
     return handleCancelButton();
   }
 
-  function handleCancelButton() {
-    setTimeout(() => {
-      router.push('/edit');
-      if (window.innerWidth > 800) {
-        document.querySelector<any | null>('.position-section').style.width = '87%';
-      } else {
-        document.querySelector<any | null>('.position-section').style.width = '97%';
-      }
-    }, 500);
-  }
+  const handleCancelButton = () => router.push('/edit');
 
   function handleForm(event: FormEvent) {
     event.preventDefault();
@@ -74,99 +72,102 @@ export default function Curso() {
   }
 
   return (
-    <div id="modal">
-      <div>
-        <form onSubmit={handleForm}>
-          <h1>Alterar Cursos</h1>
-          <div>
-            <label htmlFor="input-nome-curso">Nome</label>
-            <input
-              onChange={handleChangeData}
-              defaultValue={nome}
-              name="nome_curso"
-              id="input-nome-curso"
-              className="input-text"
-              type="text"
-              placeholder="Digite o nome do curso"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="input-codigo-curso">Código</label>
-            <input
-              onChange={handleChangeData}
-              value={codcurso}
-              name="codigo_curso"
-              id="input-codigo-curso"
-              className="input-number input-text"
-              type="text"
-              placeholder="Digite o codigo do curso"
-              pattern="\d*"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="input-codigo-disciplina-1">Código Disciplina 1</label>
-            <input
-              onChange={handleChangeData}
-              defaultValue={CodDisc1}
-              name="codigo_disciplina_1"
-              id="input-codigo-disciplina-1"
-              className="input-number input-text"
-              type="text"
-              placeholder="Digite o codigo da disciplinas 1"
-              pattern="\d*"
-              maxLength={2}
-              title="Apenas números com 2 dígitos"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="input-codigo-disciplina-2">Código Disciplina 2</label>
-            <input
-              onChange={handleChangeData}
-              defaultValue={CodDisc2}
-              name="codigo_disciplina_2"
-              id="input-codigo-disciplina-2"
-              className="input-number input-text"
-              type="text"
-              placeholder="Digite o codigo da disciplinas 2"
-              pattern="\d*"
-              maxLength={2}
-              title="Apenas números com 2 dígitos"
-              required
-            />
-          </div>
-          <div>
-            <label htmlFor="input-codigo-disciplina-3">Código Disciplina 3</label>
-            <input
-              onChange={handleChangeData}
-              defaultValue={CodDisc3}
-              name="codigo_disciplina_3"
-              id="input-codigo-disciplina-3"
-              className="input-number input-text"
-              type="text"
-              placeholder="Digite o codigo da disciplinas 3"
-              pattern="\d*"
-              maxLength={2}
-              title="Apenas números com 2 dígitos"
-              required
-            />
-          </div>
-          <div className="buttons-field">
-            <input
-              onClick={handleCancelButton}
-              name="btn_submit_2"
-              className="btn-submit"
-              type="reset"
-              value="Cancelar"
-            />
-            <button className="btn-submit" type="submit">
-              {isActiveSaveButton ? <Loader /> : 'Salvar'}
-            </button>
-          </div>
-        </form>
+    <>
+      <GlobalStyles />
+      <div id="modal">
+        <div>
+          <form onSubmit={handleForm}>
+            <h1>Alterar Cursos</h1>
+            <div>
+              <label htmlFor="input-nome-curso">Nome</label>
+              <input
+                onChange={handleChangeData}
+                defaultValue={nome}
+                name="nome_curso"
+                id="input-nome-curso"
+                className="input-text"
+                type="text"
+                placeholder="Digite o nome do curso"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="input-codigo-curso">Código</label>
+              <input
+                onChange={handleChangeData}
+                value={codcurso}
+                name="codigo_curso"
+                id="input-codigo-curso"
+                className="input-number input-text"
+                type="text"
+                placeholder="Digite o codigo do curso"
+                pattern="\d*"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="input-codigo-disciplina-1">Código Disciplina 1</label>
+              <input
+                onChange={handleChangeData}
+                defaultValue={CodDisc1}
+                name="codigo_disciplina_1"
+                id="input-codigo-disciplina-1"
+                className="input-number input-text"
+                type="text"
+                placeholder="Digite o codigo da disciplinas 1"
+                pattern="\d*"
+                maxLength={2}
+                title="Apenas números com 2 dígitos"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="input-codigo-disciplina-2">Código Disciplina 2</label>
+              <input
+                onChange={handleChangeData}
+                defaultValue={CodDisc2}
+                name="codigo_disciplina_2"
+                id="input-codigo-disciplina-2"
+                className="input-number input-text"
+                type="text"
+                placeholder="Digite o codigo da disciplinas 2"
+                pattern="\d*"
+                maxLength={2}
+                title="Apenas números com 2 dígitos"
+                required
+              />
+            </div>
+            <div>
+              <label htmlFor="input-codigo-disciplina-3">Código Disciplina 3</label>
+              <input
+                onChange={handleChangeData}
+                defaultValue={CodDisc3}
+                name="codigo_disciplina_3"
+                id="input-codigo-disciplina-3"
+                className="input-number input-text"
+                type="text"
+                placeholder="Digite o codigo da disciplinas 3"
+                pattern="\d*"
+                maxLength={2}
+                title="Apenas números com 2 dígitos"
+                required
+              />
+            </div>
+            <div className="buttons-field">
+              <input
+                onClick={handleCancelButton}
+                name="btn_submit_2"
+                className="btn-submit"
+                type="reset"
+                value="Cancelar"
+              />
+              <button className="btn-submit" type="submit">
+                {isActiveSaveButton ? <Loader /> : 'Salvar'}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   );
 }

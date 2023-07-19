@@ -14,6 +14,8 @@ export default function Menu() {
   if (typeof window !== "undefined") {
     let url = window.location.href;
 
+    console.log(url);
+    
     let domain = "https://hostmain.vercel.app";
 
     useEffect(() => {
@@ -36,7 +38,7 @@ export default function Menu() {
   return (
     <header className={`menu ${isActiveToggleMenu && 'menu-mobile-ativo'}`}>
       <div className="position-menu">
-        <a id="btn-logo" translate="no">
+        <a href="/" id="btn-logo" translate="no">
           HostMain
         </a>
         <nav className="btn-menu">
