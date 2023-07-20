@@ -7,33 +7,79 @@
     table {
       width: 100%;
       margin-top: 30px;
-
-      th {
-        color: white;
-        padding: 10px 40px;
-        background: #cdd8df;
-        border-radius: 5px;
-
-        @media screen and (max-width: 800px) {
-          & {
-            padding: 5px 10px;
-            font-size: 0.5em;
-          }
+      
+      @media screen and (max-width: 800px) {
+        & {
+          margin-top: 0;
+          display: flex;
+          overflow: hidden;
+          overflow-x: auto;
         }
       }
 
-      td {
-        color: gray;
-        text-align: center;
-        padding: 10px 40px;
-        background: #cdd8df3c;
-        border-radius: 5px;
-        font-size: 15px;
-
+      tbody {
         @media screen and (max-width: 800px) {
           & {
-            padding: 5px 14px;
-            font-size: 0.5em;
+            display: flex;
+            gap: 3px;
+            margin-bottom: 10px;
+          }
+        }
+
+        tr {
+          @media screen and (max-width: 800px) {
+            & {
+              display: flex;
+              flex-direction: column;
+              gap: 3px;
+              
+              &:nth-child(even) td {
+                background-color: #cdd8df66;
+              }
+            }
+          }
+
+          th,td {
+            @media screen and (max-width: 800px) {
+              & {
+                font-size: 0.7em !important;
+                width: 130px;
+                height: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              }
+            }
+          }
+  
+          th {
+            color: white;
+            padding: 10px 40px;
+            background: #cdd8df;
+            border-radius: 5px;
+  
+            @media screen and (max-width: 800px) {
+              & {
+                padding: 5px 10px;
+              }
+            }
+          }
+  
+          td {
+            color: gray;
+            text-align: center;
+            padding: 10px 40px;
+            background: #cdd8df3c;
+            border-radius: 5px;
+            font-size: 15px;
+  
+            @media screen and (max-width: 800px) {
+              & {
+                padding: 5px 14px;
+                width: 200px;
+                border-radius: 0;
+              }
+            }
           }
         }
       }
