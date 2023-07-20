@@ -12,6 +12,14 @@
     padding: 50px;
     margin-bottom: 20px;
 
+    @media screen and (max-width: 800px) {
+      & {
+        padding: 20px;
+        width: 97%;
+        margin-bottom: 15px;
+      }
+    }
+
     h1 {
       font-weight: normal;
       color: rgb(74, 74, 74);
@@ -30,25 +38,12 @@
       @media screen and (max-width: 800px) {
         & {
           font-size: 1.2rem;
+          width: 93%;
+          margin: 0 auto;
 
           &::after {
             margin-bottom: 15px;
           }
-        }
-      }
-    }
-  }
-
-  @media screen and (max-width: 800px) {
-    & {
-      > div {
-        padding: 20px;
-        width: 95%;
-        margin-bottom: 35px;
-
-        h1 {
-          width: 93%;
-          margin: 0 auto;
         }
       }
     }
