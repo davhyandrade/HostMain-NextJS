@@ -35,6 +35,12 @@ export default function get() {
     axios.get('/api/disciplinas').then((response) => setGetDisciplinas(response.data.result));
   }, []);
 
+  const [pageWidth, setPageWidth] = useState<number>(0);
+
+  useEffect(() => {
+    setPageWidth(window.innerWidth);
+  }, []);
+
   return (
     <>
       <Head>
@@ -45,28 +51,31 @@ export default function get() {
           <h1>Alunos</h1>
           {typeof getAlunos !== 'undefined' ? (
             getAlunos.length > 0 ? (
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Matricula</th>
-                    <th>Nome</th>
-                    <th>Endereço</th>
-                    <th>Cidade</th>
-                    <th>Código Curso</th>
-                  </tr>
-                  {getAlunos.map((value: IGetAlunos) => {
-                    return (
-                      <tr key={value.Matricula}>
-                        <td>{value.Matricula}</td>
-                        <td>{value.Nome}</td>
-                        <td>{value.Endereco}</td>
-                        <td>{value.Cidade}</td>
-                        <td>{value.CodCurso}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+              <>
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>Matricula</th>
+                      <th>Nome</th>
+                      <th>Endereço</th>
+                      <th>Cidade</th>
+                      <th>Código Curso</th>
+                    </tr>
+                    {getAlunos.map((value: IGetAlunos) => {
+                      return (
+                        <tr key={value.Matricula}>
+                          <td>{value.Matricula}</td>
+                          <td>{value.Nome}</td>
+                          <td>{value.Endereco}</td>
+                          <td>{value.Cidade}</td>
+                          <td>{value.CodCurso}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+                {pageWidth < 800 && <span>Arraste para o lado</span>}
+              </>
             ) : (
               <span>Nenhum Aluno cadastrado!</span>
             )
@@ -80,22 +89,25 @@ export default function get() {
           <h1>Disciplinas</h1>
           {typeof getDisciplinas !== 'undefined' ? (
             getDisciplinas.length > 0 ? (
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Código</th>
-                    <th>Nome</th>
-                  </tr>
-                  {getDisciplinas.map((value: IGetCursos) => {
-                    return (
-                      <tr key={value.CodDisciplina}>
-                        <td>{value.CodDisciplina}</td>
-                        <td>{value.Nome_Disciplina}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+              <>
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>Código</th>
+                      <th>Nome</th>
+                    </tr>
+                    {getDisciplinas.map((value: IGetCursos) => {
+                      return (
+                        <tr key={value.CodDisciplina}>
+                          <td>{value.CodDisciplina}</td>
+                          <td>{value.Nome_Disciplina}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+                {pageWidth < 800 && <span>Arraste para o lado</span>}
+              </>
             ) : (
               <span>Nenhuma Disciplina cadastrada!</span>
             )
@@ -109,28 +121,31 @@ export default function get() {
           <h1>Cursos</h1>
           {typeof getCursos !== 'undefined' ? (
             getCursos.length > 0 ? (
-              <table>
-                <tbody>
-                  <tr>
-                    <th>Código</th>
-                    <th>Nome</th>
-                    <th>Código Disciplina 1</th>
-                    <th>Código Disciplina 2</th>
-                    <th>Código Disciplina 3</th>
-                  </tr>
-                  {getCursos.map((value: IGetDisciplinas) => {
-                    return (
-                      <tr key={value.CodCurso}>
-                        <td>{value.CodCurso}</td>
-                        <td>{value.Nome}</td>
-                        <td>{value.CodDisc1}</td>
-                        <td>{value.CodDisc2}</td>
-                        <td>{value.CodDisc3}</td>
-                      </tr>
-                    );
-                  })}
-                </tbody>
-              </table>
+              <>
+                <table>
+                  <tbody>
+                    <tr>
+                      <th>Código</th>
+                      <th>Nome</th>
+                      <th>Código Disciplina 1</th>
+                      <th>Código Disciplina 2</th>
+                      <th>Código Disciplina 3</th>
+                    </tr>
+                    {getCursos.map((value: IGetDisciplinas) => {
+                      return (
+                        <tr key={value.CodCurso}>
+                          <td>{value.CodCurso}</td>
+                          <td>{value.Nome}</td>
+                          <td>{value.CodDisc1}</td>
+                          <td>{value.CodDisc2}</td>
+                          <td>{value.CodDisc3}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+                {pageWidth < 800 && <span>Arraste para o lado</span>}
+              </>
             ) : (
               <span>Nenhum Curso cadastrado!</span>
             )

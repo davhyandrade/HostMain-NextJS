@@ -11,6 +11,75 @@ svg {
           user-select: none;
 }
 
+table {
+  width: 100%;
+  margin-top: 30px;
+}
+@media screen and (max-width: 800px) {
+  table {
+    margin-top: 0;
+    display: flex;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+}
+@media screen and (max-width: 800px) {
+  table tbody {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 10px;
+  }
+}
+@media screen and (max-width: 800px) {
+  table tbody tr {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  table tbody tr:nth-child(even) td {
+    background-color: rgba(205, 216, 223, 0.4);
+  }
+}
+@media screen and (max-width: 800px) {
+  table tbody tr th, table tbody tr td {
+    font-size: 0.8em !important;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+table tbody tr th {
+  color: white;
+  padding: 10px 40px;
+  background: #cdd8df;
+  border-radius: 5px;
+}
+@media screen and (max-width: 800px) {
+  table tbody tr th {
+    width: 150px;
+    padding: 15px 10px;
+  }
+}
+table tbody tr td {
+  color: gray;
+  text-align: center;
+  padding: 10px 40px;
+  background: rgba(205, 216, 223, 0.2352941176);
+  border-radius: 5px;
+  font-size: 15px;
+}
+@media screen and (max-width: 800px) {
+  table tbody tr td {
+    padding: 15px 10px;
+    width: 250px;
+    border-radius: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    overflow-x: auto;
+  }
+}
+
 input:not(:-moz-placeholder-shown):invalid {
   border: none;
   outline: 2px solid rgba(255, 40, 40, 0.5294117647);
@@ -222,7 +291,6 @@ section .position-section, main .position-section {
   .fields > div {
     padding: 20px;
     width: 97%;
-    margin-bottom: 15px;
   }
 }
 .fields > div h1 {
@@ -241,7 +309,7 @@ section .position-section, main .position-section {
 }
 @media screen and (max-width: 800px) {
   .fields > div h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     width: 93%;
     margin: 0 auto;
   }
@@ -331,73 +399,23 @@ section .position-section, main .position-section {
 .get-field {
   display: flex;
 }
+@media screen and (max-width: 800px) {
+  .get-field {
+    margin-bottom: 0 !important;
+  }
+}
 .get-field div {
   flex-direction: column;
 }
-.get-field div table {
-  width: 100%;
-  margin-top: 30px;
-}
 @media screen and (max-width: 800px) {
-  .get-field div table {
-    margin-top: 0;
-    display: flex;
-    overflow: hidden;
-    overflow-x: auto;
+  .get-field div {
+    margin-bottom: 15px !important;
   }
 }
-@media screen and (max-width: 800px) {
-  .get-field div table tbody {
-    display: flex;
-    gap: 3px;
-    margin-bottom: 10px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .get-field div table tbody tr {
-    display: flex;
-    flex-direction: column;
-    gap: 3px;
-  }
-  .get-field div table tbody tr:nth-child(even) td {
-    background-color: rgba(205, 216, 223, 0.4);
-  }
-}
-@media screen and (max-width: 800px) {
-  .get-field div table tbody tr th, .get-field div table tbody tr td {
-    font-size: 0.7em !important;
-    width: 130px;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-.get-field div table tbody tr th {
-  color: white;
-  padding: 10px 40px;
-  background: #cdd8df;
-  border-radius: 5px;
-}
-@media screen and (max-width: 800px) {
-  .get-field div table tbody tr th {
-    padding: 5px 10px;
-  }
-}
-.get-field div table tbody tr td {
-  color: gray;
-  text-align: center;
-  padding: 10px 40px;
-  background: rgba(205, 216, 223, 0.2352941176);
-  border-radius: 5px;
-  font-size: 15px;
-}
-@media screen and (max-width: 800px) {
-  .get-field div table tbody tr td {
-    padding: 5px 14px;
-    width: 200px;
-    border-radius: 0;
-  }
+.get-field div table ~ span {
+  font-size: 0.7rem;
+  color: #b4bec5;
+  margin-left: 10px;
 }
 .get-field div > span {
   font-size: 1rem;
