@@ -16,7 +16,7 @@ HostMain é um CRUD desenvolvido pelo Next JS, Node JS e banco de dados MySQL na
 
 # Desenvolvimento
 
-Desenvolvido pelo `Next JS`, com o backend trabalhado con `Node JS` e `MySQL`, com as funções Cadastrar, Pesquisar, Listar, Alterar e Excluir.
+Desenvolvido pelo `Next JS`, com o backend trabalhado com `Node JS` e `MySQL`, com as funções Cadastrar, Pesquisar, Listar, Alterar e Excluir.
 
 * `Cadastrar` 
 
